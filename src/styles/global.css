@@ -1,3 +1,173 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'aos/dist/aos.css';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    overflow-x: hidden;
+    background: #000;
+}
+
+#___gatsby {
+    overflow-x: hidden;
+}
+
+h1 {
+    @apply text-3xl mb-5;
+}
+
+h2 {
+    @apply text-xl mb-5;
+}
+
+p {
+    @apply mb-2;
+}
+
+ul {
+    @apply mb-5;
+}
+
+.text-gold {
+    color: #D7B56E;
+}
+
+.bg-gold {
+    background: #D7B56E;
+}
+
+#header {
+    top: 0;
+    z-index: 100;
+    --tw-bg-opacity: 0.95;
+}
+
+#burger-menu {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+#burger-menu button {
+    padding: 1rem;
+    background: rgb(0 0 0 / 90%);
+    border-radius: 100%;
+    box-shadow: 3px 3px 6px rgb(0 0 0 / 32%);
+    outline: 1px dashed #fff;
+    outline-offset: 3px
+}
+
+#burger-menu.show {
+    @apply z-40;
+}
+
+#burger-menu.show button {
+    background: rgb(215 181 110 / 90%);
+}
+
+#nav-main.show {
+    bottom: 6rem;
+    @apply fixed right-0 p-8 pb-0;
+}
+
+#nav-main.show ul {
+    @apply flex flex-col;
+}
+
+#nav-main.show ul li {
+    @apply text-right text-2xl;
+}
+
+main .h-full {
+    min-height: calc(100vh - 140px - 79px);
+}
+
+#footer {
+    color: #fff;
+}
+
+#home h1 {
+    @apply text-gold;
+}
+
+.video-wrap {
+    /* width: 70vw; */
+    width: 100%;
+
+    @media (min-width: 768px) {
+        width: 55vw;
+    }
+}
+
+.video-wrap .overlay {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:
+        radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 75%),
+        linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 135%);
+}
+
+.video {
+    max-height: 370px;
+}
+
+.frame-wrap,
+section {
+    background: #fff;
+}
+
+section a {
+    @apply underline underline-offset-1;
+}
+
+.frame {
+    width: 120vw;
+    height: 100px;
+    position: relative;
+    margin-top: 0rem;
+    margin-left: -7vw;
+}
+
+.frame-1 {
+    transform: rotate(-5deg);
+}
+
+.frame-2 {
+    width: 70%;
+    height: 82%;
+    position: absolute;
+}
+
+#courses .content h2 {
+    @apply font-normal mb-0 text-gold;
+}
+
+#courses .content h3 {
+    @apply text-xl font-thin mb-5;
+}
+
+.frame-3 {
+    transform: rotate(2deg);
+    top: 2.3rem;
+}
+
+#hours h2,
+#contact h2 {
+    @apply text-5xl font-thin;
+}
+
+#about h2 {
+    @apply text-5xl font-thin mb-0;
+}
+
+#about h3 {
+    @apply text-xl font-normal text-gold mb-5;
+}
