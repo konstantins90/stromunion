@@ -77,7 +77,7 @@ const Header = () => {
     };
 
     return (
-        <header id="header" className="sticky bg-black text-white">
+        <header id="header" className="sticky top-0 bg-black text-white">
             <div className="container mx-auto flex justify-center md:justify-between items-center pt-10">
                 {/* <h2 className="text-2xl">{title}</h2> */}
                 <h2 className="text-2xl">
