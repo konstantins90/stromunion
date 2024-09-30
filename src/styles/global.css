@@ -60,6 +60,7 @@ ul {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
+    transition: all 1s;
 }
 
 #burger-menu button {
@@ -73,14 +74,20 @@ ul {
 
 #burger-menu.show {
     @apply z-40;
+    transform: rotate(360deg);
 }
 
 #burger-menu.show button {
     background: rgb(215 181 110 / 90%);
 }
 
+#nav-main {
+    transition: .5s ease-out .1s;
+    bottom: -100rem;
+}
+
 #nav-main.show {
-    bottom: 6rem;
+    bottom: 7rem;
     @apply fixed right-0 p-8 pb-0;
 }
 
