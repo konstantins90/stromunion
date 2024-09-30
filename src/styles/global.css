@@ -44,6 +44,18 @@ ul {
     --tw-bg-opacity: 0.95;
 }
 
+#header h2 {
+    @apply mb-0;
+}
+
+#header.scroll .container {
+    @apply py-5;
+}
+
+#header.scroll .container svg {
+    width: 100px;
+}
+
 #burger-menu {
     position: fixed;
     bottom: 2rem;

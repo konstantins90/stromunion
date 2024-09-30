@@ -33,6 +33,7 @@ const Header = () => {
     const links = data.allMdx.nodes
     const [activeSection, setActiveSection] = useState(null)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [hasScrolled, setHasScrolled] = useState(false)
 
     useEffect(() => {
       AOS.init();
@@ -46,6 +47,13 @@ const Header = () => {
             setActiveSection(section.id);
           }
         });
+
+        // Add or remove 'scroll' class based on scroll position
+        if (window.scrollY > 100) {
+            setHasScrolled(true);
+        } else {
+            setHasScrolled(false);
+        }
       };
 
       window.addEventListener('scroll', handleScroll);
@@ -77,7 +85,7 @@ const Header = () => {
     };
 
     return (
-        <header id="header" className="sticky top-0 bg-black text-white">
+        <header id="header" className={`sticky top-0 bg-black text-white ${hasScrolled ? 'scroll' : ''}`}>
             <div className="container mx-auto flex justify-center md:justify-between items-center pt-10">
                 {/* <h2 className="text-2xl">{title}</h2> */}
                 <h2 className="text-2xl">
@@ -99,7 +107,7 @@ const Header = () => {
                 </div>
                 {/* Navigation */}
                 <nav id="nav-main" className={`${isMenuOpen ? "block show z-50" : "hidden"} md:block`}>
-                    <ul className="flex gap-5">
+                    <ul className="flex gap-5 mb-0">
                         {links.map(link => (
                             <li key={link.frontmatter.slug}>
                                 <a
