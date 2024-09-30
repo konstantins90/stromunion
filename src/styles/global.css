@@ -52,7 +52,7 @@ ul {
     @apply py-5;
 }
 
-#header.scroll .container svg {
+#header.scroll .container .logo {
     width: 100px;
 }
 

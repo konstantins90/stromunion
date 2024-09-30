@@ -86,10 +86,10 @@ const Header = () => {
 
     return (
         <header id="header" className={`sticky top-0 bg-black text-white ${hasScrolled ? 'scroll' : ''}`}>
-            <div className="container mx-auto flex justify-center md:justify-between items-center pt-10">
+            <div className="container mx-auto flex justify-center md:justify-between items-center py-5">
                 {/* <h2 className="text-2xl">{title}</h2> */}
                 <h2 className="text-2xl">
-                    <Link to="/"><Logo className="w-[200px] h-auto" /></Link>
+                    <Link to="/"><Logo className="logo w-[200px] h-auto" /></Link>
                 </h2>
                 {/* Burger Icon */}
                 <div id="burger-menu" className={`${isMenuOpen ? "show" : ""} md:hidden`} onClick={toggleMenu}>
