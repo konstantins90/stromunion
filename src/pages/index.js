@@ -5,6 +5,7 @@ import Text2Columns from "../components/sections/text2columns.js"
 import Text from "../components/sections/text.js"
 import TextSection from "../components/sections/textSection.js"
 import TextImage from "../components/sections/textImage.js"
+import Gallery from "../components/sections/gallery.js"
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 
@@ -42,10 +43,15 @@ const IndexPage = ({ data }) => {
                 text={mdxData.about.body}
                 image={getImage(mdxData.about.frontmatter.image)}
             />
+            <Gallery
+                id="momente"
+                text={mdxData.momente.body}
+            />
             <TextSection
                 id="contact"
                 text={mdxData.contact.body}
             />
+            <div className="font-medium text-3xl"></div>
         </Layout>
     )
 }

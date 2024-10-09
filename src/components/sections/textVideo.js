@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { GatsbyImage } from 'gatsby-plugin-image'
 import * as runtime from "react/jsx-runtime"
 import { compileSync, runSync } from "@mdx-js/mdx"
-import Video from "../../video/4776079_Ballet_Dancer_1280x720.mp4"
+import Video from "../../video/julia-dance-studio-intro.mp4"
 
 function compileMDX(mdx) {
     const code = String(

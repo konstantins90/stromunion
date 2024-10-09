@@ -31,7 +31,7 @@ const Impressum = () => {
 
                         Kontakt<br/>
                         Telefon: {meta.fon}<br/>
-                        E-Mail: {meta.fon}<br/><br/>
+                        E-Mail: {meta.email}<br/><br/>
 
                         Verbraucher­streit­beilegung/Universal­schlichtungs­stelle
                         Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
