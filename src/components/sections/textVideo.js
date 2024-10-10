@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { GatsbyImage } from 'gatsby-plugin-image'
 import * as runtime from "react/jsx-runtime"
 import { compileSync, runSync } from "@mdx-js/mdx"
-import Video from "../../video/julia-dance-studio-intro.mp4"
 
 function compileMDX(mdx) {
     const code = String(
@@ -41,7 +39,7 @@ const TextVideo = ({ id, text }) => {
                                 playsinline="playsinline"
                                 className="video"
                             >
-                                <source src={Video} type="video/mp4" />
+                                <source src="https://ik.imagekit.io/smetana/julia-dance-studio-intro.mp4?tr=orig&updatedAt=1728586793722" type="video/mp4" />
                             </video>
                             <div className="overlay"></div>
                         </div>
