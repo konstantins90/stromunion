@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Logo from "../assets/julia-dance-studio.svg"
+import Logo from "../assets/logo.svg"
 import AOS from "aos"
 
 const Header = () => {
@@ -85,11 +85,11 @@ const Header = () => {
     };
 
     return (
-        <header id="header" className={`sticky top-0 bg-black text-white ${hasScrolled ? 'scroll' : ''}`}>
-            <div className="container mx-auto flex justify-center md:justify-between items-center py-5">
+        <header id="header" className={`absolute top-0 left-0 right-0 z-50 font-light ${hasScrolled ? 'scroll' : ''}`}>
+            <div className="mx-auto flex justify-center md:justify-between items-center px-14 py-14 xl:py-20 xl:px-24">
                 {/* <h2 className="text-2xl">{title}</h2> */}
                 <h2 className="text-2xl">
-                    <Link to="/"><Logo className="logo w-[200px] h-auto" /></Link>
+                    <Link to="/" className="hidden"><Logo className="logo w-[80px] h-auto" /></Link>
                 </h2>
                 {/* Burger Icon */}
                 <div id="burger-menu" className={`${isMenuOpen ? "show" : ""} md:hidden`} onClick={toggleMenu}>
@@ -106,13 +106,13 @@ const Header = () => {
                     </button>
                 </div>
                 {/* Navigation */}
-                <nav id="nav-main" className={`${isMenuOpen ? "block show z-50" : "hidden"} md:block`}>
+                <nav id="nav-main" className={`${isMenuOpen ? "block show z-5" : "hidden"} md:block bg-white bg-opacity-35 rounded-full`}>
                     <ul className="flex gap-5 mb-0">
                         {links.map(link => (
                             <li key={link.frontmatter.slug}>
                                 <a
                                   href={`#${link.frontmatter.slug}`}
-                                  className={activeSection === link.frontmatter.slug ? 'active text-gold' : ''}
+                                  className={`block px-4 py-4 text-white $activeSection === $link.frontmatter.slug ? 'active' : ''`}
                                   onClick={(e) => handleClick(e, link.frontmatter.slug)}
                                 >
                                   {link.frontmatter.title}
@@ -125,7 +125,7 @@ const Header = () => {
             {/* Overlay */}
             {isMenuOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-90 z-10"
+                    className="fixed inset-0 bg-opacity-90 z-10"
                     onClick={closeMenu}
                 ></div>
             )}

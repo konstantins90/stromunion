@@ -16,6 +16,11 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^5.1.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
+    "@fortawesome/free-regular-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@mdx-js/react": "^2.3.0",
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.20",
@@ -25,14 +30,19 @@
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-postcss": "^6.13.1",
+    "gatsby-plugin-react-leaflet": "^4.0.3",
     "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
+    "leaflet": "^1.9.3",
     "postcss": "^8.4.47",
     "react": "^18.2.0",
+    "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-visibility-sensor": "^5.1.1",
     "tailwindcss": "^3.4.13"
   }
 }

@@ -20,7 +20,13 @@ module.exports = {
         xl: '1240px',
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        stromRed: {
+          DEFAULT: '#ff0000',
+        },
+      },
+    },
   },
   plugins: [],
 }
