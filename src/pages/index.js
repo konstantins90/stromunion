@@ -6,6 +6,9 @@ import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebookF, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import Logo from "../assets/logo.svg"
+import BatteryIcon from "../assets/icons/battery_3383711.svg"
+import PanelIcon from "../assets/icons/electric-panel_2960650.svg"
+import SolarIcon from "../assets/icons/solar-energy_4275788.svg"
 
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
@@ -162,6 +165,32 @@ const IndexPage = ({ data }) => {
                 </div>
                 <div className="map-wrap -mx-4 my-14">
                     <Map />
+                </div>
+            </section>
+            <section id="team" className="px-4 py-16">
+                <div className="container max-w-[60%] relative">
+                    <StaticImage
+                        src="../images/banner.jpg"
+                        width={150}
+                        height={150}
+                        className="absolut rounded-xl left-0 top-0 -translate-x-11 -translate-y-16"
+                    />
+                    <StaticImage
+                        src="../images/banner2.jpg"
+                        width={150}
+                        height={150}
+                        className="absolut rounded-xl right-0 top-full -translate-x-11 -translate-y-16"
+                    />
+                    <div className="icon absolute right-0 bottom-0 p-2 bg-gray-100 rounded-full">
+                        <BatteryIcon className="w-10 h-10 fill-black" />
+                    </div>
+                    <div className="icon absolute right-1/3 bottom-full p-2 bg-gray-100 border rounded-full">
+                        <PanelIcon className="w-10 h-10 fill-black" />
+                    </div>
+                    <div className="icon absolute left-0 bottom-0 p-2 bg-gray-100 rounded-full">
+                        <SolarIcon className="w-10 h-10 fill-black" />
+                    </div>
+                    <h3 className="relative z-10 text-center text-black lg:text-7xl xl:text-9xl"><span className="text-white">Fü</span>r jedes Projekt das richtige Team.</h3>
                 </div>
             </section>
             <div className="font-medium text-3xl"></div>
