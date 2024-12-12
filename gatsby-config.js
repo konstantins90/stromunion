@@ -3,8 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Tanzkurse für Kinder & Frauen in Nieheim · Julia Dance Studio`,
-	description: `Entdecke die Freude am Tanzen im Julia Dance Studio in Nieheim. Wir bieten Tanzkurse für Kinder ab 3 Jahren und Fitness- und Tanzkurse für Frauen. Professionelle Betreuung und inspirierende Atmosphäre!`,
+    title: `Stromunion – Maßgeschneiderte Lösungen für nachhaltige Energieprojekte`,
+	description: `Willkommen bei Stromunion! Wir bieten innovative Lösungen für erneuerbare Energien, Elektrotechnik und nachhaltige Projekte. Entdecken Sie unsere Expertise und profitieren Sie von unserer Erfahrung.`,
     siteUrl: `https://www.juliadancestudio.de/`,
     email: `juliavernucciodance@gmail.com`,
     fon: `+49 162 751 69 59`,

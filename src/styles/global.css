@@ -94,3 +94,7 @@ body {
 .gatsby-image-wrapper.absolut {
     position: absolute;
 }
+
+#team .icon path {
+    fill: black;
+}
