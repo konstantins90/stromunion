@@ -98,3 +98,7 @@ body {
 #team .icon path {
     fill: black;
 }
+
+.animation.grayscale {
+    transition: all 1s;
+}

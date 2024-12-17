@@ -118,14 +118,14 @@ const IndexPage = ({ data }) => {
                         <StaticImage
                             src="../images/banner16.jpg"
                             height={750}
-                            className="h-full grayscale hover:grayscale-0"
+                            className="h-full animation grayscale hover:grayscale-0"
                         />
                     </div>
                     <div className="col-start-3 col-span-4 row-span-5 rounded-3xl overflow-hidden">
                         <StaticImage
                             src="../images/banner11.jpg"
                             height={750}
-                            className="h-full grayscale hover:grayscale-0"
+                            className="h-full animation grayscale hover:grayscale-0"
                         />
                     </div>
                     <div className="col-span-4 row-span-3 bg-[#c60505] text-white rounded-3xl p-8 xl:p-16 flex flex-col justify-between shadow-md">
@@ -156,7 +156,7 @@ const IndexPage = ({ data }) => {
                         <StaticImage
                             src="../images/banner17.jpg"
                             height={750}
-                            className="rounded-3xl grayscale hover:grayscale-0"
+                            className="rounded-3xl animation grayscale hover:grayscale-0"
                         />
                     </div>
                     <div className="col-start-3 col-span-4 row-span-2 xl:text-xl bg-black text-white rounded-xl p-10 font-light flex items-center">
