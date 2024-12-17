@@ -179,7 +179,7 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
                 <div className="map-wrap -mx-4 mt-20 mb-0">
-                    <Map />
+                    <Map /> 
                 </div>
             </section>
             <section id="team" className="px-4 py-16" data-aos="fade-up">
