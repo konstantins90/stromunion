@@ -14,6 +14,8 @@ import SolarIcon from "../assets/icons/solar-energy_4275788.svg"
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
+import BannerVideo from "../video/banner5.mp4"
+
 const IndexPage = ({ data }) => {
     return (
         <Layout>
@@ -31,16 +33,16 @@ const IndexPage = ({ data }) => {
                         playsinline="playsinline"
                         className="video w-full h-full object-cover"
                     >
-                        <source src="https://ik.imagekit.io/smetana/stromunion.mp4?updatedAt=1732393969822" type="video/mp4" />
+                        <source src={ BannerVideo } type="video/mp4" />
                     </video>
-                    <div className="overlay absolute left-0 top-0 right-0 bottom-0 bg-stromRed"></div>
-                    <hgroup className="absolute top-40 xl:top-64 px-10 xl:px-20">
+                    {/* <div className="overlay absolute left-0 top-0 right-0 bottom-0 bg-stromRed"></div> */}
+                    <hgroup className="absolute top-40 xl:top-64 px-10 xl:px-20 drop-shadow-lg">
                         <div className="wrap text-white text-opacity-85">
                             <h2 className="text-3xl lg:text-6xl xl:text-8xl font-bold flex gap-4 items-center">
-                                <div className="relative">
+                                {/* <div className="relative">
                                     <div className="absolute inset-0 logo-overlay"></div>
                                     <Logo className="logo w-[60px] xl:w-[80px] h-auto relative z-10" />
-                                </div>
+                                </div> */}
                                 <div>Stromunion AG</div>
                             </h2>
                             <h1 className="text-xl xl:text-3xl mt-4">Nachhaltig, ökonomisch, erfolgreich – Ihre Experten für Solarenergie</h1>
@@ -92,12 +94,17 @@ const IndexPage = ({ data }) => {
             </section>
             <section className="p-4" data-aos="fade-up">
                 <div className="wrap px-10 xl:px-20 py-10 flex justify-between">
-                    <div className="basis-3/5">
-                        <div className="text-lg">
-                            Willkommen bei Stromunion AG
+                    <div className="basis-3/5 flex items-center gap-10">
+                        <div>
+                            <Logo className="logo w-[60px] xl:w-[100px] h-auto relative z-10" />
                         </div>
-                        <div className="text-3xl">
-                            Ihrem Partner für innovative Energielösungen!<br /> Wir setzen auf nachhaltige Technologien, um eine grünere Zukunft zu schaffen.
+                        <div>
+                            <div className="text-lg">
+                                Willkommen bei Stromunion AG
+                            </div>
+                            <div className="text-3xl">
+                                Ihrem Partner für innovative Energielösungen!<br /> Wir setzen auf nachhaltige Technologien, um eine grünere Zukunft zu schaffen.
+                            </div>
                         </div>
                     </div>
                     <div className="basis-2/5">
@@ -107,19 +114,26 @@ const IndexPage = ({ data }) => {
             </section>
             <section className="p-4" data-aos="fade-up">
                 <div className="wrap px-10 xl:px-20 py-10 grid grid-cols-10 grid-rows-7 gap-8">
-                    <div className="col-start-3 col-span-4 row-span-5 rounded-3xl overflow-hidden">
+                    <div className="col-start-1 col-span-2 row-span-7 rounded-3xl overflow-hidden">
                         <StaticImage
-                            src="../images/banner2.jpg"
+                            src="../images/banner16.jpg"
                             height={750}
-                            className="h-full overlay"
+                            className="h-full grayscale hover:grayscale-0"
                         />
                     </div>
-                    <div className="col-span-4 row-span-3 bg-gray-50 rounded-3xl p-8 xl:p-16 flex flex-col justify-between shadow-md">
+                    <div className="col-start-3 col-span-4 row-span-5 rounded-3xl overflow-hidden">
+                        <StaticImage
+                            src="../images/banner11.jpg"
+                            height={750}
+                            className="h-full grayscale hover:grayscale-0"
+                        />
+                    </div>
+                    <div className="col-span-4 row-span-3 bg-[#c60505] text-white rounded-3xl p-8 xl:p-16 flex flex-col justify-between shadow-md">
                         <div className="text-3xl">
                             <div>
                                 Leistung über
                             </div>
-                            <span className="text-7xl xl:text-9xl text-[#a30000]">
+                            <span className="text-7xl xl:text-9xl text-black">
                                 <VisibilitySensor partialVisibility offset={{ top: 10 }}>
                                     {({ isVisible }) => (
                                     <span>
@@ -140,31 +154,31 @@ const IndexPage = ({ data }) => {
                     </div>
                     <div className="col-span-4 row-span-4">
                         <StaticImage
-                            src="../images/banner3.jpg"
+                            src="../images/banner17.jpg"
                             height={750}
-                            className="rounded-3xl overlay"
+                            className="rounded-3xl grayscale hover:grayscale-0"
                         />
                     </div>
-                    <div className="col-start-3 col-span-4 row-span-2 xl:text-xl">
+                    <div className="col-start-3 col-span-4 row-span-2 xl:text-xl bg-black text-white rounded-xl p-10 font-light flex items-center">
                         Mit unserer langjährigen Erfahrung im Bereich Solarenergie begleiten wir Sie von der Planung bis zur Umsetzung effizienter Energielösungen für Ihr Zuhause oder Unternehmen. Lassen Sie uns gemeinsam die Energiewende vorantreiben!
                     </div>
                 </div>
             </section>
-            <section id="map" className="px-4 py-16" data-aos="fade-up">
+            <section id="map" className="px-4 py-28 bg-black text-white" data-aos="fade-up">
                 <div className="headline text-center max-w-[60%] mx-auto">
                     <h3 className="text-4xl font-light">
-                        Photovoltaikanlagen in Deutschland und Europa mit über 22,5 MW Leistung
+                        Effiziente Photovoltaikanlagen für Dächer und Freiflächen – Nachhaltige Energie für Deutschland und Europa
                     </h3>
                 </div>
-                <div className="btns flex justify-center gap-4 pt-6">
+                <div className="btns flex justify-center gap-4 pt-14">
                     <div>
-                        <a className="bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-full font-light">Alle Projekte</a>
+                        <a className="bg-white hover:bg-gray-100 text-black py-2 px-4 rounded-full font-light">Alle Projekte</a>
                     </div>
                     <div>
-                        <a className="bg-white hover:bg-gray-200 text-black py-2 px-4 border border-black rounded-full font-light">Kontaktieren Sie uns</a>
+                        <a className="bg-black hover:bg-gray-900 text-white py-2 px-4 border border-white rounded-full font-light">Kontaktieren Sie uns</a>
                     </div>
                 </div>
-                <div className="map-wrap -mx-4 my-14">
+                <div className="map-wrap -mx-4 mt-20 mb-0">
                     <Map />
                 </div>
             </section>

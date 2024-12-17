@@ -15,9 +15,9 @@ if(typeof window !== 'undefined'){
 const AddressMap = () => {
   return (
     <>
-    <MapContainer center={[52.52, 13.405]} zoom={7} scrollWheelZoom={false} style={{ height: '450px', width: '100%' }}>
+    <MapContainer center={[52.52, 13.405]} zoom={7} scrollWheelZoom={false} style={{ height: '650px', width: '100%' }}>
         <TileLayer
-          url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
+          url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
         />
     </MapContainer>
     </>
