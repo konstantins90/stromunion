@@ -29,10 +29,10 @@ body {
         background: linear-gradient(180deg, rgba(0,0,0,0) 25%, rgba(0,0,0,0.8183648459383753) 100%);
     }
 
-    /* .logo {
+    .logo {
         animation: rotate 4.5s ease-in-out infinite;
         animation-delay: 0.5s;
-    } */
+    }
 
     /* .logo-overlay {
         background: radial-gradient(circle, rgba(255, 2, 1, 0) 0%, rgba(255, 2, 1, 0.30744047619047620) 49%, rgba(255, 2, 1, 0) 86%);
@@ -73,17 +73,17 @@ body {
     @apply absolute inset-0;
 }
 
-.map-wrap {
+.map-wrap .leaflet-container {
     @apply relative;
 }
-.map-wrap::before {
+.map-wrap .leaflet-container::before {
     content: "";
     @apply absolute inset-x-0 top-0 h-28;
     z-index: 500;
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
-.map-wrap::after {
+.map-wrap .leaflet-container::after {
     content: "";
     @apply absolute inset-x-0 bottom-0 h-28;
     z-index: 500;
@@ -101,4 +101,8 @@ body {
 
 .animation.grayscale {
     transition: all 1s;
+}
+
+.underline {
+    text-decoration-thickness: 0.1px;
 }

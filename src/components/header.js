@@ -106,7 +106,7 @@ const Header = () => {
                     </button>
                 </div>
                 {/* Navigation */}
-                <nav id="nav-main" className={`${isMenuOpen ? "block show z-5" : "hidden"} md:block bg-white bg-opacity-35 rounded-full`}>
+                <nav id="nav-main" data-aos="fade-down" data-aos-delay="100" className={`${isMenuOpen ? "block show z-5" : "hidden"} md:block bg-[#1c3144] bg-opacity-65 rounded-full`}>
                     <ul className="flex gap-5 mb-0">
                         {links.map(link => (
                             <li key={link.frontmatter.slug}>

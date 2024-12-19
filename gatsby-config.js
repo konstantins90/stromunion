@@ -1,6 +1,19 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require("dotenv").config({
+	path: `.env.${process.env.NODE_ENV}`,
+});
+
+const strapiConfig = {
+	version: 5,
+	apiURL: process.env.STRAPI_API_URL,
+	accessToken: process.env.STRAPI_TOKEN,
+	collectionTypes: ['project'],
+	singleTypes: [],
+	maxParallelRequests: 5,
+  };
+
 module.exports = {
   siteMetadata: {
     title: `Stromunion – Maßgeschneiderte Lösungen für nachhaltige Energieprojekte`,
@@ -67,6 +80,10 @@ module.exports = {
 		options: {
 		  linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
 		}
+	},
+	{
+		resolve: `gatsby-source-strapi`,
+		options: strapiConfig,
 	}
 	]
 };
