@@ -86,7 +86,7 @@ const Header = () => {
 
     return (
         <header id="header" className={`absolute top-0 left-0 right-0 z-50 font-light ${hasScrolled ? 'scroll' : ''}`}>
-            <div className="mx-auto flex justify-center md:justify-between items-center px-14 py-14 xl:py-20 xl:px-24">
+            <div className="mx-auto flex justify-center md:justify-between items-center px-14 py-14 xl:py-4 xl:px-4 xl:mt-[4px] xl:mr-[4px]">
                 {/* <h2 className="text-2xl">{title}</h2> */}
                 <h2 className="text-2xl">
                     <Link to="/" className="hidden"><Logo className="logo w-[80px] h-auto" /></Link>
@@ -106,13 +106,17 @@ const Header = () => {
                     </button>
                 </div>
                 {/* Navigation */}
-                <nav id="nav-main" className={`${isMenuOpen ? "block show z-5" : "hidden"} md:block bg-white bg-opacity-35 rounded-full`}>
+                <nav
+                  id="nav-main"
+                  className={`${isMenuOpen ? "block show z-5" : "hidden"} md:block bg-white bg-opacity-95 rounded-bl-xl rounded-tr-[21px]`}
+                  data-aos="fade-down" data-aos-delay="200"
+                >
                     <ul className="flex gap-5 mb-0">
                         {links.map(link => (
                             <li key={link.frontmatter.slug}>
                                 <a
                                   href={`#${link.frontmatter.slug}`}
-                                  className={`block px-4 py-4 text-white $activeSection === $link.frontmatter.slug ? 'active' : ''`}
+                                  className={`block px-6 py-6 text-black font-normal uppercase $activeSection === $link.frontmatter.slug ? 'active' : ''`}
                                   onClick={(e) => handleClick(e, link.frontmatter.slug)}
                                 >
                                   {link.frontmatter.title}

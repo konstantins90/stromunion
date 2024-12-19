@@ -73,17 +73,17 @@ body {
     @apply absolute inset-0;
 }
 
-.map-wrap {
+.map-wrap .leaflet-container {
     @apply relative;
 }
-.map-wrap::before {
+.map-wrap .leaflet-container::before {
     content: "";
     @apply absolute inset-x-0 top-0 h-28;
     z-index: 500;
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 }
-.map-wrap::after {
+.map-wrap .leaflet-container::after {
     content: "";
     @apply absolute inset-x-0 bottom-0 h-28;
     z-index: 500;
@@ -101,4 +101,8 @@ body {
 
 .animation.grayscale {
     transition: all 1s;
+}
+
+.underline {
+    text-decoration-thickness: 0.1px;
 }

@@ -36,7 +36,7 @@ const IndexPage = ({ data }) => {
                         <source src={ BannerVideo } type="video/mp4" />
                     </video>
                     {/* <div className="overlay absolute left-0 top-0 right-0 bottom-0 bg-stromRed"></div> */}
-                    <hgroup className="absolute top-40 xl:top-64 px-10 xl:px-20 drop-shadow-lg">
+                    <hgroup className="absolute top-40 xl:top-64 px-10 xl:px-20 drop-shadow-lg" data-aos="fade-up" data-aos-delay="300">
                         <div className="wrap text-white text-opacity-85">
                             <h2 className="text-3xl lg:text-6xl xl:text-8xl font-bold flex gap-4 items-center">
                                 {/* <div className="relative">
@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
                             </p>
                         </div>
                     </hgroup>
-                    <div className="absolute bottom-0 left-0 right-0 px-10 xl:px-20 pb-10">
+                    <div className="absolute bottom-0 left-0 right-0 px-10 xl:px-20 pb-10" data-aos="fade-up" data-aos-delay="500">
                         <div className="flex justify-between items-end">
                             <div className="social flex gap-2">
                                 <div className="bg-white bg-opacity-35 rounded-full w-12 h-12 p-3">
@@ -112,28 +112,30 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
             </section>
-            <section className="p-4" data-aos="fade-up">
-                <div className="wrap px-10 xl:px-20 py-10 grid grid-cols-10 grid-rows-7 gap-8">
-                    <div className="col-start-1 col-span-2 row-span-7 rounded-3xl overflow-hidden">
+            <section className="pt-4">
+                <div className="wrap py-10 grid grid-cols-12 grid-rows-7 gap-8">
+                    <div data-aos="fade-right" className="col-start-1 col-span-1 row-span-4 rounded-tr-3xl rounded-br-3xl overflow-hidden border-l-0 border-4 border-[#1C3144]"></div>
+                    <div data-aos="fade-right" className="col-start-1 col-span-1 row-start-5 row-span-3 rounded-tr-3xl rounded-br-3xl overflow-hidden bg-[#FF0201] "></div>
+                    <div data-aos="fade-right" className="col-start-2 col-span-2 row-span-7 rounded-3xl overflow-hidden">
                         <StaticImage
                             src="../images/banner16.jpg"
                             height={750}
                             className="h-full animation grayscale hover:grayscale-0"
                         />
                     </div>
-                    <div className="col-start-3 col-span-4 row-span-5 rounded-3xl overflow-hidden">
+                    <div data-aos="fade-down" className="col-start-4 col-span-4 row-span-5 rounded-3xl overflow-hidden">
                         <StaticImage
                             src="../images/banner11.jpg"
                             height={750}
                             className="h-full animation grayscale hover:grayscale-0"
                         />
                     </div>
-                    <div className="col-span-4 row-span-3 bg-[#c60505] text-white rounded-3xl p-8 xl:p-16 flex flex-col justify-between shadow-md">
+                    <div data-aos="fade-down" className="col-span-4 row-span-3 bg-black text-white rounded-3xl p-8 xl:p-16 flex flex-col justify-between shadow-md">
                         <div className="text-3xl">
                             <div>
                                 Leistung über
                             </div>
-                            <span className="text-7xl xl:text-9xl text-black">
+                            <span className="text-7xl xl:text-9xl">
                                 <VisibilitySensor partialVisibility offset={{ top: 10 }}>
                                     {({ isVisible }) => (
                                     <span>
@@ -152,14 +154,17 @@ const IndexPage = ({ data }) => {
                             in Deutschland und Europa seit Jahr 2017
                         </div>
                     </div>
-                    <div className="col-span-4 row-span-4">
+                    <div data-aos="fade-left" className="col-start-12 col-span-1 row-span-7 rounded-tl-3xl rounded-bl-3xl overflow-hidden bg-black "></div>
+                    {/* <div className="col-start-12 col-span-1 row-start-3 row-span-2 rounded-tl-3xl rounded-bl-3xl overflow-hidden border-r-0 border-4 border-black "></div>
+                    <div className="col-start-12 col-span-1 row-start-5 row-span-3 rounded-tl-3xl rounded-bl-3xl overflow-hidden bg-[#1C3144] "></div> */}
+                    <div data-aos="fade-up" className="col-span-4 row-span-4 relative animation grayscale hover:grayscale-0">
                         <StaticImage
                             src="../images/banner17.jpg"
                             height={750}
-                            className="rounded-3xl animation grayscale hover:grayscale-0"
+                            className="rounded-3xl h-full"
                         />
                     </div>
-                    <div className="col-start-3 col-span-4 row-span-2 xl:text-xl bg-black text-white rounded-xl p-10 font-light flex items-center">
+                    <div data-aos="fade-up" className="col-start-4 col-span-4 row-span-2 xl:text-xl bg-black text-white rounded-xl p-10 font-light flex items-center">
                         Mit unserer langjährigen Erfahrung im Bereich Solarenergie begleiten wir Sie von der Planung bis zur Umsetzung effizienter Energielösungen für Ihr Zuhause oder Unternehmen. Lassen Sie uns gemeinsam die Energiewende vorantreiben!
                     </div>
                 </div>
@@ -182,7 +187,7 @@ const IndexPage = ({ data }) => {
                     <Map /> 
                 </div>
             </section>
-            <section id="team" className="px-4 py-16" data-aos="fade-up">
+            <section id="team" className="px-4 pt-32 pb-28" data-aos="fade-up">
                 <div className="container max-w-[60%] relative">
                     <StaticImage
                         src="../images/banner.jpg"
@@ -196,19 +201,10 @@ const IndexPage = ({ data }) => {
                         height={150}
                         className="absolut rounded-xl right-0 top-full -translate-x-11 -translate-y-16"
                     />
-                    <div className="icon absolute right-1/4 top-full -translate-y-10 p-2 bg-red-600 rounded-full">
-                        <BatteryIcon className="w-10 h-10 xl:w-20 xl:h-20 fill-black" />
-                    </div>
-                    <div className="icon absolute right-1/3 bottom-full p-2 bg-gray-100 border rounded-full">
-                        <PanelIcon className="w-10 h-10 xl:w-20 xl:h-20 fill-black" />
-                    </div>
-                    <div className="icon absolute left-0 top-full p-2 bg-gray-100 rounded-full">
-                        <SolarIcon className="w-10 h-10 xl:w-20 xl:h-20 fill-black" />
-                    </div>
                     <h3 className="relative z-10 text-center text-black lg:text-7xl xl:text-9xl">Für jedes Projekt das richtige Team.</h3>
                 </div>
             </section>
-            <section id="projects" className="py-24" data-aos="fade-up">
+            {/* <section id="projects" className="py-24" data-aos="fade-up">
                 <div className="wrap px-10 xl:px-20 flex justify-between items-end">
                     <div className="basis-2/5">
                         <div className="text-3xl">
@@ -306,7 +302,7 @@ const IndexPage = ({ data }) => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section id="partners" className="py-14 my-24 bg-gray-100" data-aos="fade-up">
                 <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 px-10 xl:px-20">
                     <div>
