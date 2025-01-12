@@ -28,17 +28,13 @@ function useParallax(value, distance) {
 const IndexPage = ({ data }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
-    const y = useParallax(scrollYProgress, 50);
+    const y = useParallax(scrollYProgress, 120);
+    const y2 = useParallax(scrollYProgress, 230);
 
     return (
         <Layout>
-            <section id="banner" className="p-4">
+            <section id="banner" className="p-4 h-[50vh] md:h-[85vh]">
                 <div className="relative h-full rounded-3xl overflow-hidden">
-                    {/* <StaticImage
-                        src="../images/banner2.jpg"
-                        width={1920}
-                        className="flip-image"
-                    /> */}
                     <video
                         autoplay="autoPlay" 
                         loop="loop" 
@@ -49,7 +45,7 @@ const IndexPage = ({ data }) => {
                         <source src={ BannerVideo } type="video/mp4" />
                     </video>
                     {/* <div className="overlay absolute left-0 top-0 right-0 bottom-0 bg-stromRed"></div> */}
-                    <hgroup className="absolute top-40 xl:top-64 px-10 xl:px-20 drop-shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <hgroup className="absolute bottom-5 md:top-40 xl:top-64 px-5 lg:px-10 xl:px-20 drop-shadow-lg" data-aos="fade-up" data-aos-delay="300">
                         <div className="wrap text-white text-opacity-85">
                             <h2 className="text-3xl lg:text-6xl xl:text-8xl font-bold flex gap-4 items-center">
                                 <div className="relative">
@@ -59,12 +55,12 @@ const IndexPage = ({ data }) => {
                                 <div>Stromunion AG</div>
                             </h2>
                             <h1 className="text-xl xl:text-3xl mt-4">Nachhaltig, ökonomisch, erfolgreich – Ihre Experten für Solarenergie</h1>
-                            <p className="max-w-[50%] mt-10 text-lg font-light">
+                            <p className="lg:max-w-[50%] mt-10 text-lg font-light hidden md:block">
                                 Mit maßgeschneiderten Solar- und Energielösungen sorgen wir dafür, dass nachhaltige Energie für jeden zugänglich wird – effizient, kostensparend und zukunftsorientiert.
                             </p>
                         </div>
                     </hgroup>
-                    <div className="absolute bottom-0 left-0 right-0 px-10 xl:px-20 pb-10" data-aos="fade-up" data-aos-delay="500">
+                    <div className="absolute bottom-0 left-0 right-0 px-10 xl:px-20 pb-10 hidden md:block" data-aos="fade-up" data-aos-delay="500">
                         <div className="flex justify-between items-end">
                             <div className="social flex gap-2">
                                 <div className="bg-[#1c3144] bg-opacity-65 rounded-full w-12 h-12 p-3">
@@ -106,49 +102,47 @@ const IndexPage = ({ data }) => {
                 </div>
             </section>
             <section className="p-4" data-aos="fade-up">
-                <div className="wrap px-10 xl:px-20 py-10 flex justify-between">
-                    <div className="basis-3/5 flex items-center gap-10">
-                        {/* <div>
-                            <Logo className="logo w-[60px] xl:w-[100px] h-auto relative z-10" />
-                        </div> */}
+                <div className="wrap px-5 xl:px-20 py-5 md:py-10 flex justify-between">
+                    <div className="basis-5/5 md:basis-3/5 flex items-center gap-10 text-center md:text-left">
                         <div>
                             <div className="text-lg">
                                 Willkommen bei Stromunion AG
                             </div>
-                            <div className="text-3xl">
+                            <div className="text-md font-light md:font-normal md:text-3xl">
                                 Ihrem Partner für innovative Energielösungen!<br /> Wir setzen auf nachhaltige Technologien, um eine grünere Zukunft zu schaffen.
                             </div>
                         </div>
                     </div>
-                    <div className="basis-2/5">
+                    <div className="basis-2/5 hidden md:block">
                         
                     </div>
                 </div>
             </section>
             <section className="pt-4">
-                <div className="wrap py-10 grid grid-cols-12 grid-rows-7 gap-8">
-                    <div data-aos="fade-right" className="col-start-1 col-span-1 row-span-4 rounded-tr-3xl rounded-br-3xl overflow-hidden border-l-0 border-4 border-[#1C3144]"></div>
-                    <div data-aos="fade-right" className="col-start-1 col-span-1 row-start-5 row-span-3 rounded-tr-3xl rounded-br-3xl overflow-hidden bg-[#FF0201] "></div>
-                    <div data-aos="fade-right" className="col-start-2 col-span-2 row-span-7 rounded-3xl overflow-hidden">
+                <div className="wrap pb-10 md:py-10 grid grid-cols-12 grid-rows-4 md:grid-rows-7 gap-4 h-[150vh] md:h-auto">
+                    <div data-aos="fade-right" className="col-start-1 col-span-3 row-start-1 row-span-1 md:col-start-1 md:col-span-1 md:row-span-4 rounded-tr-3xl rounded-br-3xl overflow-hidden border-l-0 border-4 border-[#1C3144]"></div>
+                    <div data-aos="fade-right" className="col-start-11 col-span-3 row-start-2 row-span-1 md:col-start-1 md:col-span-1 md:row-start-5 md:row-span-3 rounded-tl-3xl rounded-bl-3xl md:rounded-none md:rounded-tr-3xl md:rounded-br-3xl overflow-hidden bg-[#FF0201] "></div>
+                    <div data-aos="fade-right" className="block md:hidden col-start-1 col-span-1 row-start-2 row-span-1 rounded-tr-3xl rounded-br-3xl overflow-hidden bg-black "></div>
+                    <div data-aos="fade-right" className="col-start-4 col-span-9 row-start-1 row-span-1 md:col-start-2 md:col-span-2 md:row-span-7 rounded-3xl overflow-hidden">
                         <StaticImage
                             src="../images/banner16.jpg"
                             height={750}
                             className="h-full animation grayscale hover:grayscale-0"
                         />
                     </div>
-                    <div data-aos="fade-down" className="col-start-4 col-span-4 row-span-5 rounded-3xl overflow-hidden">
+                    <div data-aos="fade-down" className="col-start-7 col-span-6 row-start-3 row-span-1 md:col-start-4 md:col-span-4 md:row-span-5 rounded-3xl overflow-hidden">
                         <StaticImage
                             src="../images/banner11.jpg"
                             height={750}
                             className="h-full animation grayscale hover:grayscale-0"
                         />
                     </div>
-                    <div data-aos="fade-down" className="col-span-4 row-span-3 bg-black text-white rounded-3xl p-8 xl:p-16 flex flex-col justify-between shadow-md">
+                    <div data-aos="fade-down" className="col-start-2 col-span-9 row-start-2 row-span-1 md:col-span-4 md:row-span-3 bg-black text-white rounded-3xl p-8 xl:p-16 flex flex-col justify-between shadow-md">
                         <div className="text-3xl">
                             <div>
                                 Leistung über
                             </div>
-                            <span className="text-7xl xl:text-9xl">
+                            <span className="text-5xl md:text-7xl xl:text-9xl">
                                 <VisibilitySensor partialVisibility offset={{ top: 10 }}>
                                     {({ isVisible }) => (
                                     <span>
@@ -167,24 +161,24 @@ const IndexPage = ({ data }) => {
                             in Deutschland und Europa seit Jahr 2017
                         </div>
                     </div>
-                    <div data-aos="fade-left" className="col-start-12 col-span-1 row-span-7 rounded-tl-3xl rounded-bl-3xl overflow-hidden bg-black "></div>
+                    <div data-aos="fade-left" className="hidden md:block md:col-start-12 md:col-span-1 md:row-span-7 rounded-tl-3xl rounded-bl-3xl overflow-hidden bg-black "></div>
                     {/* <div className="col-start-12 col-span-1 row-start-3 row-span-2 rounded-tl-3xl rounded-bl-3xl overflow-hidden border-r-0 border-4 border-black "></div>
                     <div className="col-start-12 col-span-1 row-start-5 row-span-3 rounded-tl-3xl rounded-bl-3xl overflow-hidden bg-[#1C3144] "></div> */}
-                    <div data-aos="fade-up" className="col-span-4 row-span-4 relative animation grayscale hover:grayscale-0">
+                    <div data-aos="fade-up" className="col-start-1 col-span-6 row-start-3 row-span-1 md:col-span-4 md:row-span-4 relative animation grayscale hover:grayscale-0">
                         <StaticImage
                             src="../images/banner17.jpg"
                             height={750}
-                            className="rounded-3xl h-full"
+                            className="rounded-tr-3xl rounded-br-3xl md:rounded-3xl h-full"
                         />
                     </div>
-                    <div data-aos="fade-up" className="col-start-4 col-span-4 row-span-2 xl:text-xl bg-black text-white rounded-xl p-10 font-light flex items-center">
+                    <div data-aos="fade-up" className="col-start-1 col-span-12 ml-4 md:ml-0 row-start-4 row-span-1 md:col-start-4 md:col-span-4 md:row-span-2 xl:text-xl bg-black text-white rounded-xl p-4 md:p-10 font-light flex items-center">
                         Mit unserer langjährigen Erfahrung im Bereich Solarenergie begleiten wir Sie von der Planung bis zur Umsetzung effizienter Energielösungen für Ihr Zuhause oder Unternehmen. Lassen Sie uns gemeinsam die Energiewende vorantreiben!
                     </div>
                 </div>
             </section>
-            <section id="map" className="px-4 py-28 bg-black text-white" data-aos="fade-up">
-                <div className="headline text-center max-w-[60%] mx-auto">
-                    <h3 className="text-4xl font-light">
+            <section id="map" className="px-4 pt-28 pb-10 md:py-28 bg-black text-white" data-aos="fade-up">
+                <div className="headline text-center md:max-w-[60%] mx-auto">
+                    <h3 className="text-2xl md:text-4xl font-light">
                         Effiziente Photovoltaikanlagen für Dächer und Freiflächen – Nachhaltige Energie für Deutschland und Europa
                     </h3>
                 </div>
@@ -201,8 +195,8 @@ const IndexPage = ({ data }) => {
                 </div>
             </section>
             <section id="team" className="px-4 pt-32 pb-28" data-aos="fade-up">
-                <div ref={ref} className="container max-w-[60%] relative">
-                    <motion.div style={{ y }} className="absolute left-0 top-0 -translate-x-11 -translate-y-16">
+                <div ref={ref} className="container md:max-w-[60%] relative">
+                    <motion.div style={{ y: y }} className="absolute left-0 top-5 md:top-0 -translate-x-11 -translate-y-16">
                         <StaticImage
                             src="../images/banner.jpg"
                             width={150}
@@ -210,18 +204,17 @@ const IndexPage = ({ data }) => {
                             className="rounded-xl"
                         />
                     </motion.div>
-                    <motion.div style={{ y }} className="absolute right-0 top-full -translate-x-11 -translate-y-16">
+                    <motion.div style={{ y: y2 }} className="absolute right-0 top-24 md:top-full -translate-x-11 -translate-y-36">
                         <StaticImage
                             src="../images/banner2.jpg"
                             width={150}
                             height={150}
                             className="rounded-xl"
-                            style={{ y }}
                         />
                     </motion.div>
-                    <h3 className="relative z-10 text-center text-black lg:text-7xl xl:text-9xl">Für jedes Projekt das richtige Team.</h3>
+                    <h3 className="relative z-10 md:text-center text-black text-5xl lg:text-7xl xl:text-9xl">Für jedes Projekt das richtige Team.</h3>
                 </div>
-                <div className="container max-w-[60%] py-10 text-2xl text-left pr-40 font-light">
+                <div className="container md:max-w-[60%] py-10 text-2xl text-left md:pr-40 font-light relative z-10">
                     <strong>Erfolg ist Teamsache.</strong> Und Teamarbeit wird bei uns ganz besonders groß geschrieben. Hinter jedem Projekt, dass die Stromunion entwickelt, steht <strong>ein Team von Experten</strong>, deren Fähigkeiten genau auf die Erfordernisse des jeweiligen Projekts abgestimmt sind. Der Vorteil dabei: Wir sind ganz besonders stark, wenn es um die Umsetzung von individuellen Projekten und Lösungen geht.
                 </div>
             </section>
@@ -325,7 +318,7 @@ const IndexPage = ({ data }) => {
                 </div>
             </section> */}
             <section id="partners" className="py-10 bg-gray-100" data-aos="fade-up">
-                <div className="container flex justify-around items-center gap-10 px-10 xl:px-20">
+                <div className="container flex flex-wrap justify-around items-center gap-10 px-10 xl:px-20">
                     <div>
                         <StaticImage
                             src="../images/partners/Huawei-Logo.svg"

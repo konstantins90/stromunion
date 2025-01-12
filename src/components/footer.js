@@ -16,7 +16,7 @@ const Footer = () => {
     const meta = data.site.siteMetadata;
 
     return (
-        <footer id="footer" className="py-5 relative flex flex-col justify-end bg-black text-white">
+        <footer id="footer" className="py-5 px-4 relative flex flex-col justify-end bg-black text-white">
             <div className="flex flex-col">
                 <div className="text-sm text-center mb-2">
                     { meta.title } · <Link to="/impressum">Impressum</Link>

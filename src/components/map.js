@@ -75,7 +75,7 @@ const AddressMap = () => {
 
   return (
     <>
-    <MapContainer center={[52.52, 13.405]} zoom={7} scrollWheelZoom={false} style={{ height: '650px', width: '100%' }}>
+    <MapContainer center={[52.52, 13.405]} zoom={7} scrollWheelZoom={false} className="w-full h-[70vh]">
       <TileLayer
         url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
       />
@@ -97,8 +97,8 @@ const AddressMap = () => {
         ) : null
       ))}
     </MapContainer>
-    <div className="projects pt-24 px-20" data-aos="fade-up">
-      <div className="text-white flex justify-between items-end mb-4">
+    <div className="projects pt-24 px-4 md:px-20" data-aos="fade-up">
+      <div className="text-white flex flex-col md:flex-row justify-between items-end mb-4">
         <div>
           <h3 className="text-4xl font-light">Unsere letzten Projekte</h3>
         </div>
@@ -106,12 +106,12 @@ const AddressMap = () => {
           Alle Projekte sehen
         </div>
       </div>
-      <div className="grid grid-cols-5 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8">
         {projectList.map((project, index) => (
           project.Image?.localFile ? (
             <div>
               <Image image={project.Image.localFile} name={project.Name} />
-              <div className="mt-4 text-lg font-light text-white flex justify-between">
+              <div className="mt-4 text-lg font-light text-white md:flex justify-between">
                 <div className="uppercase">
                   {project.Name}
                 </div>
