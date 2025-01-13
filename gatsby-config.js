@@ -81,9 +81,9 @@ module.exports = {
 		  linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
 		}
 	}
-	// ,{
-	// 	resolve: `gatsby-source-strapi`,
-	// 	options: strapiConfig,
-	// }
+	,{
+		resolve: `gatsby-source-strapi`,
+		options: strapiConfig,
+	}
 	]
 };
