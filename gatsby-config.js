@@ -12,6 +12,11 @@ const strapiConfig = {
 	collectionTypes: ['project'],
 	singleTypes: [],
 	maxParallelRequests: 5,
+	populate: {
+		Image: {
+			populate: '*',
+		},
+	},
   };
 
 module.exports = {
