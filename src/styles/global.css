@@ -104,3 +104,25 @@ body {
 .underline {
     text-decoration-thickness: 0.1px;
 }
+
+#burger-menu {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+
+    button {
+        border-radius: 20%;
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 1px 1px 13px rgba(0,0,0,0.6);
+        outline: 1px dashed;
+        outline-offset: 4px;
+        outline-color: rgb(0 0 0 / 100%);
+    }
+}
