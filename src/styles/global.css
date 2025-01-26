@@ -136,26 +136,23 @@ body {
     }
 }
 
-#service {
-    .overtext {
-        @apply relative;
+#service .overtext {
+    @apply relative;
+}
 
-        
-        &::after {
-            content: "";
-            @apply absolute inset-0 z-10;
-            background: rgb(255,255,255);
-            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(0,0,0,1) 100%);
-        }
+#service .overtext::after {
+    content: " ";
+    @apply absolute inset-0 z-10;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(0,0,0,1) 100%);
+}
 
-        .text {
-            @apply absolute z-20 bottom-0 left-0 right-0 px-8 py-4 text-white;
+#service .overtext .text {
+    @apply absolute z-20 bottom-0 left-0 right-0 px-8 py-4 text-white;
+}
 
-            h3 {
-                @apply text-xl mb-2;
-            }
-        }
-    }
+#service .overtext .text h3 {
+    @apply text-xl mb-2;
 }
 
 
