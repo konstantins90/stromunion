@@ -26,6 +26,9 @@ module.exports = {
           DEFAULT: '#ff0000',
         },
       },
+      fontSize: {
+        '14xl': ['9rem', '9rem']
+      }
     },
   },
   plugins: [],

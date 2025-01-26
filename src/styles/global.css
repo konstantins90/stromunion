@@ -126,3 +126,117 @@ body {
         outline-color: rgb(0 0 0 / 100%);
     }
 }
+
+.line {
+    @apply relative;
+
+    &::after {
+        content: "";
+        @apply absolute -bottom-1 left-0 h-1 w-20 bg-[#FF0201];
+    }
+}
+
+#service {
+    .overtext {
+        @apply relative;
+
+        
+        &::after {
+            content: "";
+            @apply absolute inset-0 z-10;
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(0,0,0,1) 100%);
+        }
+
+        .text {
+            @apply absolute z-20 bottom-0 left-0 right-0 px-8 py-4 text-white;
+
+            h3 {
+                @apply text-xl mb-2;
+            }
+        }
+    }
+}
+
+
+.text-animation {
+    animation: colorchange 5s infinite alternate;
+}
+
+.bg.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-device-width: 900px) {
+  .bg.parallax {
+    background-attachment: scroll;
+  }
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+@keyframes colorchange {
+    0% {
+        color: #FEBD2F;
+    }
+    50% {
+        color: #FEBD2F;
+    }
+    100% {
+        color: #FF0201;
+    }
+}
+
+@keyframes colorchangeBlack {
+  0% {
+      color: #9ca3af;
+  }
+  100% {
+      color: #FF0201;
+  }
+}
+  
+@keyframes bgcolorchange {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#steps .step {
+    transition: all 0.7s ease;
+}
+
+#steps:hover .step {
+    opacity: 0.3;
+}
+
+#steps .step:hover {
+    opacity: 1;
+}
+
+#steps .step:hover .step-number {
+    animation: colorchangeBlack 2s infinite alternate;
+}
+
+
+#steps .step {
+    position: relative;
+}
+
+#call-to-action {
+    .fa-circle-arrow-right {
+        @apply left-0;
+        transition: all 0.8s ease;
+    }
+
+    &:hover {
+        .fa-circle-arrow-right {
+            @apply left-4;
+        }
+    }
+}

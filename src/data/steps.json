@@ -1,0 +1,26 @@
+[
+    {
+      "number": 1,
+      "title": "Beratung",
+      "description": "Unsere Experten analysieren Ihre individuellen Anforderungen und Gegebenheiten, um die beste Lösung für Sie zu finden.",
+      "class": ""
+    },
+    {
+      "number": 2,
+      "title": "Planung",
+      "description": "Wir entwickeln ein maßgeschneidertes Konzept, das maximale Effizienz und Wirtschaftlichkeit gewährleistet.",
+      "class": ""
+    },
+    {
+      "number": 3,
+      "title": "Installation",
+      "description": "Unser erfahrenes Expertenteam sorgt für eine fachgerechte und reibungslose Umsetzung Ihrer Solaranlage.",
+      "class": ""
+    },
+    {
+      "number": 4,
+      "title": "Betreuung",
+      "description": "Auch nach der Installation sind wir für Sie da – mit regelmäßiger Wartung und Optimierung für eine langfristige Performance.",
+      "class": ""
+    }
+]

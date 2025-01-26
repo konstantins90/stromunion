@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import L from 'leaflet';
 
 let customIcon = '';
@@ -58,7 +60,7 @@ const AddressMap = () => {
 
   const projectList = projects
   .filter((item) => item.Image && item.Image.localFile)
-  .slice(0, 5);
+  .slice(0, 7);
 
   const Image = ({ image, name }) => (
     <GatsbyImage
@@ -99,14 +101,14 @@ const AddressMap = () => {
     </MapContainer>
     <div className="projects pt-24 px-4 md:px-20" data-aos="fade-up">
       <div className="text-white flex flex-col md:flex-row justify-between items-end mb-4">
-        <div>
-          <h3 className="text-4xl font-light">Unsere letzten Projekte</h3>
+        <div className="mb-6">
+          <h3 className="text-4xl font-light line">Unsere letzten Projekte</h3>
         </div>
         <div className="text-xl font-light underline underline-offset-4">
           Alle Projekte sehen
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
         {projectList.map((project, index) => (
           project.Image?.localFile ? (
             <div>
@@ -122,6 +124,12 @@ const AddressMap = () => {
             </div>
           ) : null
         ))}
+        <div className="flex flex-col">
+          <a href="#" className="image h-full bg-gray-900 rounded-xl flex justify-center items-center text-2xl font-light">
+            Weitere 95 Projekte ansehen <FontAwesomeIcon icon={faArrowRight} size="2x" className="w-6 h-6 ml-2" />
+          </a>
+          <div className="mt-4 text-lg font-light text-white md:flex justify-between">&nbsp;</div>
+        </div>
       </div>
     </div>
     </>
