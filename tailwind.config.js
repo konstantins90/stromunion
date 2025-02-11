@@ -22,12 +22,16 @@ module.exports = {
     },
     extend: {
       colors: {
+        gray: {
+          '900': '#191919',
+        },
         stromRed: {
           DEFAULT: '#ff0000',
         },
       },
       fontSize: {
-        '14xl': ['9rem', '9rem']
+        '14xl': ['9rem', '9rem'],
+        'mega': ['15rem', '20rem']
       }
     },
   },

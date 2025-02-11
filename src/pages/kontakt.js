@@ -1,0 +1,131 @@
+import React, { useEffect, useRef } from 'react'
+import { Link } from "gatsby"
+import Layout from "../components/layout.js"
+import ProjectList from '../components/projectList.js';
+import { StaticImage } from "gatsby-plugin-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Steps from '../components/steps.js';
+import { 
+    faChevronLeft,
+    faChevronRight,
+    faQuoteLeft,
+    faArrowRight,
+    faArrowDown,
+    faCircleArrowRight,
+    faPhone,
+    faAt,
+    faLocationDot,
+    faA
+} from "@fortawesome/free-solid-svg-icons"
+import Logo from "../assets/logo.svg"
+
+import {
+    motion,
+    useScroll,
+    useSpring,
+    useTransform,
+    MotionValue
+  } from "framer-motion";
+
+import BannerVideo from "../video/banner.mp4"
+
+const KontaktPage = ({ data }) => {
+    return (
+        <Layout>
+            <section id="banner" className="p-4">
+                <div className="relative h-full rounded-3xl overflow-hidden">
+                    <video
+                        autoplay="autoPlay" 
+                        loop="loop" 
+                        muted="muted" 
+                        playsinline="playsinline"
+                        className="video w-full h-full object-cover absolute"
+                    >
+                        <source src={ BannerVideo } type="video/mp4" />
+                    </video>
+                    <hgroup className="py-10 px-5 lg:px-10 xl:px-20 drop-shadow-lg relative z-10" data-aos="fade-up" data-aos-delay="300">
+                        <div className="wrap text-white text-opacity-85">
+                            <h2 className="text-3xl font-bold flex gap-4 items-end">
+                                <div className="relative">
+                                    <div className="absolute inset-0 logo-overlay"></div>
+                                    <Logo className="logo w-[50px] xl:w-[60px] h-auto relative z-10 mb-5" />
+                                </div>
+                                <div>Stromunion AG</div>
+                            </h2>
+                        </div>
+                    </hgroup>
+                </div>
+            </section>
+            <section className="p-4" data-aos="fade-up">
+                <div className="wrap px-5 xl:px-20 py-5 md:pt-10 md:pb-20 flex justify-between">
+                    <div className="flex items-center gap-10 text-center md:text-left">
+                        <div>
+                            <div className="text-3xl xl:text-8xl mb-4 line">
+                                Kontaktieren Sie uns
+                            </div>
+                            <div className="text-3xl xl:text-5xl font-light">
+                                Wir sind für Sie da
+                            </div>
+                            <div className='text-xl md:text-3xl font-light mt-10 md:max-w-[70%]'>
+                                Sie haben Fragen oder möchten mehr über unsere Leistungen erfahren? Wir stehen Ihnen mit unserem Know-how zur Seite. Kontaktieren Sie uns für eine persönliche Beratung – gemeinsam finden wir die beste Lösung für Ihre individuellen Anforderungen. Wir freuen uns auf Ihre Nachricht!
+                            </div>
+                            <div className='text-xl md:text-2xl mt-10 font-light flex gap-4'>
+                                <div className='bg-black text-white p-10 rounded-xl flex flex-col justify-center gap-4'>
+                                    <div>
+                                        <FontAwesomeIcon icon={faPhone} size="1x" className="w-6 h-6 mr-2 text-stromRed" /> <a href="tel:+491728333397">+49 (0) 172 8333397</a>
+                                    </div>
+                                    <div>
+                                        <FontAwesomeIcon icon={faAt} size="1x" className="w-6 h-6 mr-2 text-stromRed" /> <a href="mailto:info@stromunion.com">info@stromunion.com</a>
+                                    </div>
+                                </div>
+                                <a href="https://maps.app.goo.gl/avgT6KUM7tVKBTHd8" target='_blank' className='flex items-center bg-black text-white p-10 rounded-xl'>
+                                    <div>
+                                        <FontAwesomeIcon icon={faLocationDot} size="1x" className="w-6 h-6 pr-4 text-stromRed" />
+                                    </div>
+                                    <div>
+                                        Stromunion AG<br/>
+                                        Hohe Bleichen 18<br/>
+                                        20354 Hamburg
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div className="bg">
+                    <div className="bg parallax h-screen relative" style={{ "background-image": "url('https://ik.imagekit.io/smetana/Stromunion%20AG/6001.jpg?updatedAt=1737811086864')" }}>
+                        <div class="w-full h-full absolute inset-0 img-overlay"></div>
+                        <div className="container text-center h-full flex flex-col justify-center relative">
+                            <div className="text-6xl lg:text-14xl font-bold text-[#FEBD2F]">Energie von oben</div>
+                            <div className="text-6xl lg:text-7xl font-bold text-[#FEBD2F]">Nachhaltig und zukunftssicher</div>
+                            <p className="text-lg lg:text-2xl mt-10 text-white">Mit unseren Anlagen setzen Sie auf umweltfreundliche Energiegewinnung, reduzieren Ihren CO2-Fußabdruck und investieren in eine nachhaltige Zukunft.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="step-by-step" className="py-10 bg-black">
+                <div className="container py-20 text-zinc-200" data-aos="fade-up">
+                    <h3 className='text-6xl font-light line'>Schritt für Schritt zur Solaranlage</h3>
+                    <p className='mt-8 text-xl font-light'>Von der ersten Beratung bis zur langfristigen Betreuung – wir begleiten Sie bei jedem Schritt auf dem Weg zu Ihrer eigenen Solaranlage. Mit unserem strukturierten und professionellen Prozess sorgen wir dafür, dass Ihre Anlage nicht nur umweltfreundlich, sondern auch maximal effizient und zuverlässig ist.</p>
+                    <Steps />
+                </div>
+                <div className="container md:max-w-[40%] py-10 text-zinc-200 text-center" data-aos="fade-up">
+                    <h3 className='text-4xl font-light line inline-block mx-auto'>Jetzt aktiv werden!</h3>
+                    <p className='text-xl font-light mt-10'>
+                        Starten Sie Ihren Weg zu nachhaltiger Energie noch heute. Vereinbaren Sie ein unverbindliches Beratungsgespräch und entdecken Sie die Vorteile Ihrer eigenen Solaranlage.
+                    </p>
+                    <div className='mt-10'>
+                    <a href="tel:+491728333397" id="call-to-action" className="border-[#FF0201] bg-black border-4 transition duration-800 ease-in-out hover:bg-[#FF0201] text-2xl text-zinc-200 py-4 px-8 rounded-full align-middle">
+                        Ruffen Sie uns an <FontAwesomeIcon icon={faCircleArrowRight} size="2x" className="w-8 h-8 ml-5 text-zinc-200 relative" />
+                    </a>
+                    </div>
+                </div>
+            </section>
+            <div className="font-medium text-3xl"></div>
+        </Layout>
+    )
+}
+
+export default KontaktPage

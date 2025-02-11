@@ -108,13 +108,12 @@ const Header = () => {
                     <ul className="flex gap-5 mb-0">
                         {links.map(link => (
                             <li key={link.frontmatter.slug}>
-                                <a
-                                  href={`#${link.frontmatter.slug}`}
+                                <Link
+                                  to={`${link.frontmatter.slug}`}
                                   className={`block px-4 py-4 text-white $activeSection === $link.frontmatter.slug ? 'active' : ''`}
-                                  onClick={(e) => handleClick(e, link.frontmatter.slug)}
                                 >
                                   {link.frontmatter.title}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>

@@ -5,8 +5,16 @@ import Map from "../components/map.js"
 import Steps from '../components/steps.js';
 import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebookF, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons"
-import { faChevronLeft, faChevronRight, faQuoteLeft, faArrowRight, faArrowDown, faCircleArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { 
+    faChevronLeft,
+    faChevronRight,
+    faQuoteLeft,
+    faArrowRight,
+    faArrowDown,
+    faCircleArrowRight,
+    faPhone,
+    faAt
+} from "@fortawesome/free-solid-svg-icons"
 import Logo from "../assets/logo.svg"
 
 import {
@@ -35,7 +43,7 @@ const IndexPage = ({ data }) => {
     return (
         <Layout>
             <section id="banner" className="p-4 h-[50vh] md:h-[85vh]">
-                <div className="relative h-full rounded-3xl overflow-hidden">
+                <div className="relative h-full rounded-3xl overflow-hidden bg-zinc-900">
                     <video
                         autoplay="autoPlay" 
                         loop="loop" 
@@ -48,10 +56,10 @@ const IndexPage = ({ data }) => {
                     {/* <div className="overlay absolute left-0 top-0 right-0 bottom-0 bg-stromRed"></div> */}
                     <hgroup className="absolute bottom-5 md:top-40 xl:top-64 px-5 lg:px-10 xl:px-20 drop-shadow-lg" data-aos="fade-up" data-aos-delay="300">
                         <div className="wrap text-white text-opacity-85">
-                            <h2 className="text-3xl lg:text-6xl xl:text-8xl font-bold flex gap-4 items-center">
+                            <h2 className="text-3xl lg:text-6xl xl:text-8xl font-bold flex gap-4 items-end">
                                 <div className="relative">
                                     <div className="absolute inset-0 logo-overlay"></div>
-                                    <Logo className="logo w-[60px] xl:w-[80px] h-auto relative z-10" />
+                                    <Logo className="logo w-[100px] xl:w-[140px] h-auto relative z-10 mb-14" />
                                 </div>
                                 <div>Stromunion AG</div>
                             </h2>
@@ -64,17 +72,14 @@ const IndexPage = ({ data }) => {
                     <div className="absolute bottom-0 left-0 right-0 px-10 xl:px-20 pb-10 hidden md:block" data-aos="fade-up" data-aos-delay="500">
                         <div className="flex justify-between items-end">
                             <div className="social flex gap-2">
-                                <div className="bg-[#000000] bg-opacity-65 rounded-full w-12 h-12 p-3">
-                                    <FontAwesomeIcon icon={faFacebookF} size="2x" className="w-full h-full text-white" />
+                                <div className="bg-[#000000] bg-opacity-65 rounded-full w-auto h-12 p-3 flex gap-x-4 text-white text-nowrap">
+                                    <FontAwesomeIcon icon={faPhone} size="2x" className="w-full h-full" /> <a href="tel:+491728333397">+49 (0) 172 8333397</a>
                                 </div>
-                                <div className="bg-[#000000] bg-opacity-65 rounded-full w-12 h-12 p-3">
-                                    <FontAwesomeIcon icon={faLinkedinIn} size="2x" className="w-full h-full text-white" />
-                                </div>
-                                <div className="bg-[#000000] bg-opacity-65 rounded-full w-12 h-12 p-3">
-                                    <FontAwesomeIcon icon={faInstagram} size="2x" className="w-full h-full text-white" />
+                                <div className="bg-[#000000] bg-opacity-65 rounded-full w-auto h-12 p-3 flex gap-x-4 text-white">
+                                    <FontAwesomeIcon icon={faAt} size="2x" className="w-full h-full" /> <a href="mailto:info@stromunion.com">info@stromunion.com</a>
                                 </div>
                             </div>
-                            <div className="w-80 text-white font-light">
+                            {/* <div className="w-80 text-white font-light">
                                 <div className="text-xl">Alle zwei Wochen realisieren wir 13&nbsp;neue Solarprojekte</div>
                                 <div className="flex mt-4 gap-4">
                                     <div className="flex items-center">
@@ -97,7 +102,7 @@ const IndexPage = ({ data }) => {
                                         und tragen so aktiv zur Reduktion von CO2-Emissionen bei.
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -192,10 +197,10 @@ const IndexPage = ({ data }) => {
                     </div>
                     <div data-aos="fade-up" className="col-start-2 col-span-8">
                         <div className="pt-8">
-                            <a href="#" className="text-3xl text-black line font">
+                            <Link to="/leistungen" className="text-3xl text-black line font">
                                 Alle unsere Leistungen
                                 <FontAwesomeIcon icon={faArrowRight} size="2x" className="w-8 h-8 ml-5 text-black" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -208,10 +213,10 @@ const IndexPage = ({ data }) => {
                 </div>
                 <div className="btns flex justify-center gap-4 pt-14">
                     <div>
-                        <a className="bg-white hover:bg-gray-100 text-black py-2 px-4 rounded-full font-light">Alle Projekte</a>
+                        <Link to="/projekte" className="bg-white hover:bg-zinc-100 text-black py-2 px-4 rounded-full font-light">Alle Projekte</Link>
                     </div>
                     <div>
-                        <a className="bg-black hover:bg-gray-900 text-white py-2 px-4 border border-white rounded-full font-light">Kontaktieren Sie uns</a>
+                        <Link to="/kotankt" className="bg-black hover:bg-zinc-900 text-white py-2 px-4 border border-white rounded-full font-light">Kontaktieren Sie uns</Link>
                     </div>
                 </div>
                 <div className="map-wrap -mx-4 mt-20 mb-0">
@@ -247,7 +252,7 @@ const IndexPage = ({ data }) => {
                     </div>
                 </div>
             </section>
-            <section id="partners" className="py-10 bg-gray-100" data-aos="fade-up">
+            <section id="partners" className="py-10 bg-zinc-100" data-aos="fade-up">
                 <div className="container flex flex-wrap justify-around items-center gap-10 px-10 xl:px-20">
                     <div>
                         <StaticImage
@@ -291,19 +296,19 @@ const IndexPage = ({ data }) => {
                 </div>
             </section>
             <section id="step-by-step" className="py-10 bg-black">
-                <div className="container py-20 text-gray-200" data-aos="fade-up">
+                <div className="container py-20 text-zinc-200" data-aos="fade-up">
                     <h3 className='text-6xl font-light line'>Schritt für Schritt zur Solaranlage</h3>
                     <p className='mt-8 text-xl font-light'>Von der ersten Beratung bis zur langfristigen Betreuung – wir begleiten Sie bei jedem Schritt auf dem Weg zu Ihrer eigenen Solaranlage. Mit unserem strukturierten und professionellen Prozess sorgen wir dafür, dass Ihre Anlage nicht nur umweltfreundlich, sondern auch maximal effizient und zuverlässig ist.</p>
                     <Steps />
                 </div>
-                <div className="container md:max-w-[40%] py-10 text-gray-200 text-center" data-aos="fade-up">
+                <div className="container md:max-w-[40%] py-10 text-zinc-200 text-center" data-aos="fade-up">
                     <h3 className='text-4xl font-light line inline-block mx-auto'>Jetzt aktiv werden!</h3>
                     <p className='text-xl font-light mt-10'>
                         Starten Sie Ihren Weg zu nachhaltiger Energie noch heute. Vereinbaren Sie ein unverbindliches Beratungsgespräch und entdecken Sie die Vorteile Ihrer eigenen Solaranlage.
                     </p>
                     <div className='mt-10'>
-                    <a href="#" id="call-to-action" className="border-[#FF0201] bg-black border-4 transition duration-800 ease-in-out hover:bg-[#FF0201] text-2xl text-gray-200 py-4 px-8 rounded-full align-middle">
-                        Ruffen Sie uns an <FontAwesomeIcon icon={faCircleArrowRight} size="2x" className="w-8 h-8 ml-5 text-gray-200 relative" />
+                    <a href="#" id="call-to-action" className="border-[#FF0201] bg-black border-4 transition duration-800 ease-in-out hover:bg-[#FF0201] text-2xl text-zinc-200 py-4 px-8 rounded-full align-middle">
+                        Ruffen Sie uns an <FontAwesomeIcon icon={faCircleArrowRight} size="2x" className="w-8 h-8 ml-5 text-zinc-200 relative" />
                     </a>
                     </div>
                 </div>
@@ -318,10 +323,10 @@ const IndexPage = ({ data }) => {
                     <div className="basis-2/5">
                         <div className="flex gap-4 justify-end">
                             <div>
-                                <FontAwesomeIcon icon={faChevronLeft} size="2x" className="w-8 h-8 text-black p-3 bg-gray-100 rounded-full border border-gray-300" />
+                                <FontAwesomeIcon icon={faChevronLeft} size="2x" className="w-8 h-8 text-black p-3 bg-zinc-100 rounded-full border border-zinc-300" />
                             </div>
                             <div>
-                                <FontAwesomeIcon icon={faChevronRight} size="2x" className="w-8 h-8 text-black p-3 bg-gray-100 rounded-full border border-gray-300" />
+                                <FontAwesomeIcon icon={faChevronRight} size="2x" className="w-8 h-8 text-black p-3 bg-zinc-100 rounded-full border border-zinc-300" />
                             </div>
                         </div>
                     </div>
@@ -378,7 +383,7 @@ const IndexPage = ({ data }) => {
                     </div>
                     <div className="basis-2/5 relative">
                         <FontAwesomeIcon icon={faQuoteLeft} size="2x" className="w-16 h-16 text-red-600 absolute z-0 right-full bottom-full rotate-12 translate-y-10 translate-x-5" />
-                        <div className="text-xl xl:text-2xl font-light text-gray-800 relative z-10">
+                        <div className="text-xl xl:text-2xl font-light text-zinc-800 relative z-10">
                             Die Zusammenarbeit mit Stromunion war hervorragend! Das Team hat unsere Anforderungen schnell verstanden und mit höchster Professionalität umgesetzt. Besonders beeindruckt hat uns die Zuverlässigkeit, die innovativen Lösungsansätze und die offene Kommunikation während des gesamten Projekts. Wir sind äußerst zufrieden und empfehlen Stromunion gerne weiter.
                         </div>
                         <div className="flex justify-between mt-4">
@@ -397,10 +402,10 @@ const IndexPage = ({ data }) => {
                             </div>
                             <div className="flex gap-4 justify-end">
                                 <div>
-                                    <FontAwesomeIcon icon={faChevronLeft} size="2x" className="w-8 h-8 text-black p-3 bg-gray-100 rounded-full border border-gray-300" />
+                                    <FontAwesomeIcon icon={faChevronLeft} size="2x" className="w-8 h-8 text-black p-3 bg-zinc-100 rounded-full border border-zinc-300" />
                                 </div>
                                 <div>
-                                    <FontAwesomeIcon icon={faChevronRight} size="2x" className="w-8 h-8 text-black p-3 bg-gray-100 rounded-full border border-gray-300" />
+                                    <FontAwesomeIcon icon={faChevronRight} size="2x" className="w-8 h-8 text-black p-3 bg-zinc-100 rounded-full border border-zinc-300" />
                                 </div>
                             </div>
                         </div>

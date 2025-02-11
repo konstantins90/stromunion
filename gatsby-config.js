@@ -9,7 +9,7 @@ const strapiConfig = {
 	version: 5,
 	apiURL: process.env.STRAPI_API_URL,
 	accessToken: process.env.STRAPI_TOKEN,
-	collectionTypes: ['project'],
+	collectionTypes: ['project', 'service'],
 	singleTypes: [],
 	maxParallelRequests: 5,
 	populate: {

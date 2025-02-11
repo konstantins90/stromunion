@@ -1,0 +1,47 @@
+[
+  {
+    "headline": "Planung & Projektierung",
+    "description": "Wir entwickeln individuelle Konzepte für Ihre erneuerbaren Energieprojekte – von der ersten Idee bis zur finalen Planung.",
+    "service": [
+      "Analyse des Energiebedarfs",
+      "Standort- und Machbarkeitsstudien",
+      "Wirtschaftlichkeitsberechnungen"
+    ]
+  },
+  {
+    "headline": "Installation & Umsetzung",
+    "description": "Unsere erfahrenen Techniker und Ingenieure sorgen für eine fachgerechte Installation und Inbetriebnahme Ihrer Anlagen.",
+    "service": [
+      "Professionelle Montage",
+      "Einsatz modernster Technik",
+      "Qualitätskontrollen"
+    ]
+  },
+  {
+    "headline": "Beratung & Betreuung",
+    "description": "Von der Konzeptphase bis zum laufenden Betrieb – wir begleiten Sie persönlich und kompetent.",
+    "service": [
+      "Individuelle Beratung",
+      "Laufende Betreuung und Support",
+      "Optimierungsstrategien"
+    ]
+  },
+  {
+    "headline": "Wartung & Service",
+    "description": "Regelmäßige Inspektionen und präventive Wartung sichern die Langlebigkeit und Effizienz Ihrer Anlagen.",
+    "service": [
+      "Routine-Checks",
+      "Fehlerdiagnose und Reparaturen",
+      "Modernisierungen"
+    ]
+  },
+  {
+    "headline": "Finanzierung & Fördermittel",
+    "description": "Wir unterstützen Sie bei der Beantragung von Fördergeldern und entwickeln individuelle Finanzierungslösungen.",
+    "service": [
+      "Fördermittelberatung",
+      "Finanzierungsmodelle",
+      "Individuelle Lösungskonzepte"
+    ]
+  }
+]

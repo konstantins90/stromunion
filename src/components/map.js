@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -125,9 +125,9 @@ const AddressMap = () => {
           ) : null
         ))}
         <div className="flex flex-col">
-          <a href="#" className="image h-full bg-gray-900 rounded-xl flex justify-center items-center text-2xl font-light">
+          <Link to="/projekte" className="image h-full bg-zinc-900 rounded-xl flex justify-center items-center text-2xl font-light">
             Weitere 95 Projekte ansehen <FontAwesomeIcon icon={faArrowRight} size="2x" className="w-6 h-6 ml-2" />
-          </a>
+          </Link>
           <div className="mt-4 text-lg font-light text-white md:flex justify-between">&nbsp;</div>
         </div>
       </div>
