@@ -5,11 +5,11 @@ import { StaticImage } from "gatsby-plugin-image"
 const Footer = () => {
     const data = useStaticQuery(graphql`
         query {
-          site {
-            siteMetadata {
-              title
+            site {
+                siteMetadata {
+                title
+                }
             }
-          }
         }
     `)
     

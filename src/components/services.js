@@ -65,8 +65,8 @@ const Services = () => {
             {services.map(function(service, index) {
                 return (
                     <div className={`service ${index % 2 !== 0 ? "bg-black text-white" : ""}`} data-aos="fade-up">
-                        <div className="container flex py-20">
-                            <div className="flex items-center justify-center gap-20 py-10">
+                        <div className="container flex py-10 md:py-20">
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 py-10">
                                 <div className="flex-1">
                                     <Image image={service.Image.localFile} name={service.name} />
                                 </div>

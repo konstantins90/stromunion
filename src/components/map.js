@@ -108,7 +108,7 @@ const AddressMap = () => {
           Alle Projekte sehen
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
         {projectList.map((project, index) => (
           project.Image?.localFile ? (
             <div>
@@ -125,7 +125,7 @@ const AddressMap = () => {
           ) : null
         ))}
         <div className="flex flex-col">
-          <Link to="/projekte" className="image h-full bg-zinc-900 rounded-xl flex justify-center items-center text-2xl font-light">
+          <Link to="/projekte" className="image h-full bg-zinc-900 rounded-xl flex justify-center items-center text-base xl:text-2xl font-light p-6">
             Weitere 95 Projekte ansehen <FontAwesomeIcon icon={faArrowRight} size="2x" className="w-6 h-6 ml-2" />
           </Link>
           <div className="mt-4 text-lg font-light text-white md:flex justify-between">&nbsp;</div>

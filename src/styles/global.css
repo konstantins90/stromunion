@@ -55,13 +55,13 @@ body {
 
 @keyframes rotate {
     0% {
-      transform: rotate(0);
+        transform: rotate(0);
     }
     60% {
         transform: rotate(0);
     }
     100% {
-      transform: rotate(-720deg);
+        transform: rotate(-720deg);
     }
 }
 
@@ -111,8 +111,8 @@ body {
 
 #burger-menu {
     position: fixed;
-    right: 15px;
-    bottom: 15px;
+    right: 25px;
+    bottom: 30px;
 
     button {
         border-radius: 20%;
@@ -131,13 +131,23 @@ body {
     }
 }
 
+#burger-menu.show button {
+    background: rgba(255, 2, 1, 0.8);
+    outline-color: rgb(24 24 27 / 100%);
+}
+
 .line {
     @apply relative;
 
     &::after {
         content: "";
-        @apply absolute -bottom-1 left-0 h-1 w-20 bg-[#FF0201];
+        @apply absolute -bottom-2 left-0 h-1 w-20 bg-[#FF0201];
     }
+}
+
+.text-center .line::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #service .overtext {
@@ -253,4 +263,18 @@ body {
 
 #visions .vision:hover {
     opacity: 1;
+}
+
+.contact_fields > dt {
+    @apply bg-gray-50 px-4 pt-4 rounded-tr-xl rounded-tl-xl;
+}
+
+.contact_fields > dd {
+    @apply bg-gray-50 px-4 pb-4 mb-4 rounded-br-xl rounded-bl-xl;
+}
+
+@media (width < 48rem) {
+    #nav-main ul li:last-child a {
+        width: calc(100% - 70px);
+    }
 }

@@ -92,7 +92,7 @@ const Header = () => {
                     <Link to="/" className="hidden"><Logo className="logo w-[80px] h-auto" /></Link>
                 </h2>
                 {/* Burger Icon */}
-                <div id="burger-menu" className={`${isMenuOpen ? "show" : ""} md:hidden`} onClick={toggleMenu}>
+                <div id="burger-menu" className={`${isMenuOpen ? "show" : ""} md:hidden z-40`} onClick={toggleMenu}>
                     <button className="text-white focus:outline-none">
                         {isMenuOpen ? (
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -104,13 +104,13 @@ const Header = () => {
                     </button>
                 </div>
                 {/* Navigation */}
-                <nav id="nav-main" data-aos="fade-down" data-aos-delay="100" className={`${isMenuOpen ? "block show z-5" : "hidden"} md:block bg-[#000000] bg-opacity-65 rounded-full`}>
-                    <ul className="flex gap-5 mb-0">
+                <nav id="nav-main" className={`${isMenuOpen ? "block show z-20" : "hidden"} md:block md:bg-black md:bg-opacity-65 md:rounded-full max-md:fixed max-md:inset-0`}>
+                    <ul className="flex flex-col md:flex-row gap-5 mb-0 max-md:flex max-md:h-full max-md:justify-end max-md:p-5">
                         {links.map(link => (
                             <li key={link.frontmatter.slug}>
                                 <Link
                                   to={`${link.frontmatter.slug}`}
-                                  className={`block px-4 py-4 text-white $activeSection === $link.frontmatter.slug ? 'active' : ''`}
+                                  className={`block px-4 py-4 max-md:bg-zinc-900 max-md:opacity-90 max-md:rounded-xl max-md:py-8 max-md:text-xl text-white $activeSection === $link.frontmatter.slug ? 'active' : ''`}
                                 >
                                   {link.frontmatter.title}
                                 </Link>
@@ -122,7 +122,7 @@ const Header = () => {
             {/* Overlay */}
             {isMenuOpen && (
                 <div
-                    className="fixed inset-0 bg-opacity-90 z-10"
+                    className="fixed inset-0 bg-black bg-opacity-95 z-10"
                     onClick={closeMenu}
                 ></div>
             )}
