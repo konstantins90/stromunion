@@ -24,6 +24,7 @@ const Header = () => {
               frontmatter {
                 title
                 slug
+                class
               }
             }
           }
@@ -110,7 +111,7 @@ const Header = () => {
                             <li key={link.frontmatter.slug}>
                                 <Link
                                   to={`${link.frontmatter.slug}`}
-                                  className={`block px-4 py-4 max-md:bg-zinc-900 max-md:opacity-90 max-md:rounded-xl max-md:py-8 max-md:text-xl text-white $activeSection === $link.frontmatter.slug ? 'active' : ''`}
+                                  className={`block px-4 py-4 max-md:bg-zinc-900 max-md:opacity-90 max-md:rounded-xl max-md:py-8 max-md:text-xl text-white ${link.frontmatter.class} $activeSection === $link.frontmatter.slug ? 'active' : ''`}
                                 >
                                   {link.frontmatter.title}
                                 </Link>
