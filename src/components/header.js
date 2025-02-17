@@ -113,8 +113,8 @@ const Header = () => {
                     </button>
                 </div>
                 {/* Navigation */}
-                <nav id="nav-main" className={`${isMenuOpen ? "block show z-20" : "hidden"} md:block md:bg-black md:bg-opacity-65 md:rounded-full max-md:fixed max-md:inset-0`}>
-                    <ul className="flex flex-col md:flex-row gap-5 mb-0 max-md:flex max-md:h-full max-md:justify-end max-md:p-5">
+                <nav id="nav-main" className={`${isMenuOpen ? "block show z-20" : "hidden"} md:block md:bg-black md:bg-opacity-65 md:rounded-full max-md:fixed max-md:inset-0 max-md:overflow-y-scroll`}>
+                    <ul className="flex flex-col md:flex-row gap-5 mb-0 max-md:flex max-md:h-auto max-md:justify-end max-md:p-5">
                         {links.map(link => (
                             <li key={link.frontmatter.slug}>
                                 <Link
