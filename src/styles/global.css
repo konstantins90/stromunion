@@ -274,7 +274,7 @@ body {
 }
 
 @media (width < 48rem) {
-    #nav-main ul li:last-child a {
+    #nav-main ul li:last-child {
         width: calc(100% - 70px);
     }
 }

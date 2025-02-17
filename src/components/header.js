@@ -3,6 +3,14 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Logo from "../assets/logo.svg"
 import AOS from "aos"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+    faCircleArrowRight,
+    faPhone,
+    faAt,
+    faLocationDot
+} from "@fortawesome/free-solid-svg-icons"
+
 const Header = () => {
     const data = useStaticQuery(graphql`
         query {
@@ -111,12 +119,20 @@ const Header = () => {
                             <li key={link.frontmatter.slug}>
                                 <Link
                                   to={`${link.frontmatter.slug}`}
-                                  className={`block px-4 py-4 max-md:bg-zinc-900 max-md:opacity-90 max-md:rounded-xl max-md:py-8 max-md:text-xl text-white ${link.frontmatter.class} $activeSection === $link.frontmatter.slug ? 'active' : ''`}
+                                  className={`block px-4 py-4 max-md:bg-zinc-900 max-md:opacity-90 max-md:rounded-xl max-md:py-6 max-md:text-xl text-white ${link.frontmatter.class} $activeSection === $link.frontmatter.slug ? 'active' : ''`}
                                 >
                                   {link.frontmatter.title}
                                 </Link>
                             </li>
                         ))}
+                        <li className="flex gap-5 md:hidden">
+                          <a href="tel:+491728333397" className="flex-1 px-4 py-4 max-md:bg-zinc-900 max-md:opacity-90 max-md:rounded-xl max-md:py-6 max-md:text-xl text-white text-center">
+                            <FontAwesomeIcon icon={faPhone} size="1x" className="w-6 h-6 pr-4 text-stromRed" />
+                          </a>
+                          <a href="mailto:info@stromunion.com" className="flex-1 px-4 py-4 max-md:bg-zinc-900 max-md:opacity-90 max-md:rounded-xl max-md:py-6 max-md:text-xl text-white text-center">
+                            <FontAwesomeIcon icon={faAt} size="1x" className="w-6 h-6 pr-4 text-stromRed" />
+                          </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

@@ -1,14 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from "gatsby"
 import Layout from "../components/layout.js"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Steps from '../components/steps.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
     faCircleArrowRight,
     faPhone,
     faAt,
-    faLocationDot,
-    faA
+    faLocationDot
 } from "@fortawesome/free-solid-svg-icons"
 import Logo from "../assets/logo.svg"
 
