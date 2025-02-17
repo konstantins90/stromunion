@@ -14,7 +14,7 @@ const LeistungenPage = ({ data }) => {
     return (
         <Layout>
             <section id="banner" className="p-4">
-                <div className="relative h-full rounded-3xl overflow-hidden">
+                <div className="relative h-full rounded-3xl overflow-hidden bg-zinc-900">
                     <video
                         autoplay="autoPlay" 
                         loop="loop" 
