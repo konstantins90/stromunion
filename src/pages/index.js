@@ -51,9 +51,9 @@ const IndexPage = ({ data }) => {
                             <h2 className="text-3xl lg:text-6xl xl:text-8xl font-bold flex gap-4 items-end">
                                 <div className="relative">
                                     <div className="absolute inset-0 logo-overlay"></div>
-                                    <Logo className="logo w-[100px] xl:w-[140px] h-auto relative z-10 mb-14" />
+                                    <Logo className="logo w-[100px] xl:w-[140px] h-auto relative z-10 mb-10 md:mb-14" />
                                 </div>
-                                <div>Stromunion AG</div>
+                                <div className="max-md:-ml-6">Stromunion AG</div>
                             </h2>
                             <h1 className="text-xl xl:text-3xl mt-4">Nachhaltig, ökonomisch, erfolgreich – Ihre Experten für Solarenergie</h1>
                             <p className="lg:max-w-[50%] mt-10 text-lg font-light hidden md:block">
