@@ -9,7 +9,7 @@ import {
 
 const Vision = () => {
     return (
-        <div id="visions" className="flex mt-16 gap-10">
+        <div id="visions" className="flex flex-col md_flex-row mt-16 gap-10">
             <div className="vision flex-1 px-8 py-10 bg-zinc-900 rounded-xl" data-aos="fade-up">
                 <div className="flex flex-col text-left">
                     <div className="step-title text-lg pb-4">

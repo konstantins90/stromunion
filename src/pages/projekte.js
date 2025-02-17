@@ -38,8 +38,8 @@ const ProjektePage = ({ data }) => {
                 </div>
             </section>
             <section className="p-4" data-aos="fade-up">
-                <div className="wrap px-5 xl:px-20 py-5 md:pt-10 md:pb-20 flex justify-between">
-                    <div className="flex items-center gap-10 text-center md:text-left">
+                <div className="wrap px-5 xl:px-20 py-5 md:py-10 flex justify-between">
+                    <div className="flex items-center gap-10 text-left">
                         <div>
                             <div className="text-3xl md:text-6xl xl:text-8xl mb-4 line">
                                 Unsere Projekte
