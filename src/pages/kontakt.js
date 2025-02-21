@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from "gatsby"
 import Layout from "../components/layout.js"
+import Banner from '../components/banner.js';
 import Steps from '../components/steps.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -9,37 +10,11 @@ import {
     faAt,
     faLocationDot
 } from "@fortawesome/free-solid-svg-icons"
-import Logo from "../assets/logo.svg"
-
-import BannerVideo from "../video/banner.mp4"
 
 const KontaktPage = ({ data }) => {
     return (
         <Layout>
-            <section id="banner" className="p-4">
-                <div className="relative h-full rounded-3xl overflow-hidden bg-zinc-900">
-                    <video
-                        autoplay="autoPlay" 
-                        loop="loop" 
-                        muted="muted" 
-                        playsinline="playsinline"
-                        className="video w-full h-full object-cover absolute"
-                    >
-                        <source src={ BannerVideo } type="video/mp4" />
-                    </video>
-                    <hgroup className="py-10 px-5 lg:px-10 xl:px-20 drop-shadow-lg relative z-10" data-aos="fade-up" data-aos-delay="300">
-                        <div className="wrap text-white text-opacity-85">
-                            <h2 className="text-3xl font-bold flex gap-4 items-end">
-                                <div className="relative">
-                                    <div className="absolute inset-0 logo-overlay"></div>
-                                    <Logo className="logo w-[50px] xl:w-[60px] h-auto relative z-10 mb-5" />
-                                </div>
-                                <div>Stromunion AG</div>
-                            </h2>
-                        </div>
-                    </hgroup>
-                </div>
-            </section>
+            <Banner />
             <section className="p-4" data-aos="fade-up">
                 <div className="px-5 xl:px-20 py-5 md:py-10">
                     <div className="md:flex items-center gap-10 text-left">
@@ -54,7 +29,7 @@ const KontaktPage = ({ data }) => {
                                 Sie haben Fragen oder möchten mehr über unsere Leistungen erfahren? Wir stehen Ihnen mit unserem Know-how zur Seite. Kontaktieren Sie uns für eine persönliche Beratung – gemeinsam finden wir die beste Lösung für Ihre individuellen Anforderungen. Wir freuen uns auf Ihre Nachricht!
                             </div>
                             <div className="">
-                                <div className='text-lg md:text-2xl mt-10 font-light flex flex-col md:flex-row wrap gap-4 overflow-x-scroll'>
+                                <div className='text-lg md:text-2xl mt-10 font-light flex flex-col md:flex-row wrap gap-4 overflow-x-scroll md:overflow-hidden'>
                                     <div className='bg-black text-white p-10 rounded-xl flex flex-col justify-center gap-4'>
                                         <div>
                                             <FontAwesomeIcon icon={faPhone} size="1x" className="w-4 h-4 md:w-6 md:h-6 mr-2 text-stromRed" /> <a href="tel:+491728333397">+49 (0) 172 8333397</a>

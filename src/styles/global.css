@@ -9,6 +9,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+body.page-home #logo > * {
+    display: none !important;
+}
+
 #___gatsby {
     overflow-x: clip;
 }

@@ -23,12 +23,12 @@ module.exports = {
   siteMetadata: {
     title: `Stromunion – Maßgeschneiderte Lösungen für nachhaltige Energieprojekte`,
 	description: `Willkommen bei Stromunion! Wir bieten innovative Lösungen für erneuerbare Energien, Elektrotechnik und nachhaltige Projekte. Entdecken Sie unsere Expertise und profitieren Sie von unserer Erfahrung.`,
-    siteUrl: `https://www.juliadancestudio.de/`,
-    email: `juliavernucciodance@gmail.com`,
-    fon: `+49 162 751 69 59`,
-    name: `Julia Vernuccio`,
-    address: `Lehmkuhle 1`,
-    city: `33039 Nieheim`,
+    siteUrl: `https://www.stromunion.com/`,
+    email: `info@stromunion.com`,
+    fon: `+49 172 8333397`,
+    name: `Stromunion AG`,
+    address: `Hohe Bleichen 18`,
+    city: `20354 Hamburg`,
   },
   plugins: [
 	"gatsby-plugin-postcss",
