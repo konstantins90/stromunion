@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from "gatsby"
 import Layout from "../components/layout.js"
-import { SEO } from "../components/seo"
+import { SEO } from "../components/seo.js"
 import Map from "../components/map.js"
 import { StaticImage } from "gatsby-plugin-image"
 import Logo from "../assets/logo.svg";

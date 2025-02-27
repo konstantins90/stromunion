@@ -9,12 +9,31 @@ const strapiConfig = {
 	version: 5,
 	apiURL: process.env.STRAPI_API_URL,
 	accessToken: process.env.STRAPI_TOKEN,
-	collectionTypes: ['project', 'service'],
-	singleTypes: [],
-	maxParallelRequests: 5,
+	collectionTypes: [
+		{
+            singularName: "page",
+        	queryParams: {
+            	populate: {
+                	content: { populate: "*" },
+            	},
+            },
+        },
+		'project',
+		'service',
+	],
+	singleTypes: ['config'],
+	maxParallelRequests: 10,
+	queryLimit: 1000,
 	populate: {
 		Image: {
 			populate: '*',
+		},
+		page: "*",
+		pages: "*",
+		page: {
+			populate: {
+				content: "*"
+			}
 		},
 	},
   };
