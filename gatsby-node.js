@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
             path: page.slug === "home" ? "/" : `/${page.slug}`,
             component: path.resolve("./src/templates/page-template.js"),
             context: {
-                id: page.id,
+                id: page.id
             },
         });
     });

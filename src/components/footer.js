@@ -1,29 +1,29 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql, Link } from "gatsby";
+import { configQuery } from "../queries/configFragment.js";
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
         query {
-            site {
-                siteMetadata {
-                title
-                }
+            strapiConfig {
+                ...ConfigData
             }
         }
-    `)
-    
-    const meta = data.site.siteMetadata;
+    `);
 
     return (
         <footer id="footer" className="py-5 px-4 relative flex flex-col justify-end bg-black text-white">
             <div className="flex flex-col">
                 <div className="text-sm text-center mb-2">
-                    { meta.title } · <Link to="/impressum">Impressum</Link>
+                    {data.strapiConfig.footer_text_1.data.footer_text_1} · <Link to="/impressum">Impressum</Link>
                 </div>
-                <div className="footer-copyright text-sm text-center">
-                    Designed und programmiert mit <span class="text-red-600">♥</span> bei <a target="_blank" href="https://www.smetana.be">Smetana</a>.
-                </div>
+                { data.strapiConfig.footer_text_2 && (
+                    <div className="footer-copyright text-sm text-center">
+                        <ReactMarkdown children={data.strapiConfig.footer_text_2.data.footer_text_2} rehypePlugins={[rehypeRaw]} />
+                    </div>
+                )}
             </div>
         </footer>
     )

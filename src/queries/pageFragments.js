@@ -8,6 +8,8 @@ export const pageFragment = graphql`
         template
         publishedAt
         class
+        seo_title
+        seo_description
         content {
             __typename
             ...ContentTeaserData
