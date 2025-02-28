@@ -7,58 +7,56 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import L from 'leaflet';
 
 let customIcon = '';
-if(typeof window !== 'undefined'){
-  customIcon = new L.icon({
-    iconUrl: '/rb_25530.png',
-    iconSize: [50, 50], // Size of the icon
-    iconAnchor: [12, 55], // Point of the icon which will correspond to marker's location
-    popupAnchor: [0, -55] // Point from which the popup should open relative to the iconAnchor
-  });
+if (typeof window !== 'undefined') {
+    customIcon = new L.icon({
+        iconUrl: '/rb_25530.png',
+        iconSize: [50, 50],
+        iconAnchor: [12, 55],
+        popupAnchor: [0, -55]
+    });
 }
 
-const dataQuery = graphql`
-query GetProjects {
-    allStrapiProject (
-        sort: {
-            publishedAt: DESC
-        }
-    ) {
-        nodes {
-            id
-            Name
-            Capacity
-            Commissioning
-            Category
-            Image {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            width: 600
-                            placeholder: BLURRED
-                            formats: [AUTO, WEBP, AVIF]
-                            aspectRatio: 1.5
-                        )
+const MapComponent = ({ block }) => {
+    const data = useStaticQuery(graphql`
+        query GetProjects {
+            allStrapiProject (
+                sort: {
+                    publishedAt: DESC
+                }
+            ) {
+                nodes {
+                    id
+                    Name
+                    Capacity
+                    Commissioning
+                    Category
+                    Image {
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData(
+                                    width: 600
+                                    placeholder: BLURRED
+                                    formats: [AUTO, WEBP, AVIF]
+                                    aspectRatio: 1.5
+                                )
+                            }
+                        }
+                    }
+                    Address {
+                        Street
+                        Postcode
+                        City
+                    }
+                    Location {
+                        Lat
+                        Long
                     }
                 }
             }
-            Address {
-                Street
-                Postcode
-                City
-            }
-            Location {
-                Lat
-                Long
-            }
         }
-    }
-}
-`;
+    `);
 
-const MapComponent = ({ block }) => {
-    const sourceData = useStaticQuery(dataQuery);
-
-    const projects = sourceData.allStrapiProject.nodes;
+    const projects = data.allStrapiProject.nodes;
 
     const projectList = projects
     .filter((item) => item.Image && item.Image.localFile)
