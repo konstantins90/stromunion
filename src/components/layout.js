@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
             <main>
                 {children}
             </main>
-            <div className="bg-zinc-100 text-red-600"></div>
             <Footer/>
         </>
     )

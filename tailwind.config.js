@@ -4,6 +4,11 @@ module.exports = {
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
+  safelist: [
+    'bg-zinc-100',
+    'text-red-600',
+    'text-[#FF0201]',
+  ],
   theme: {
     container: {
       // you can configure the container to be centered
