@@ -41,11 +41,11 @@ query GetServices {
         }
     }
 }
-`
+`;
 
 const Services = () => {
-    const sourceData = useStaticQuery(dataQuery)
-    const services = sourceData.allStrapiService.nodes
+    const sourceData = useStaticQuery(dataQuery);
+    const services = sourceData.allStrapiService.nodes;
 
     const Image = ({ image, name }) => (
         <GatsbyImage

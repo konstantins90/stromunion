@@ -4,41 +4,43 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from "rehype-raw";
 
-const Project = ({ block }) => {
-    const data = useStaticQuery(graphql`
-        query GetProjects {
-            allStrapiProject (
-                sort: {
-                publishedAt: DESC
-                }
-            ) {
-                nodes {
-                    id
-                    Name
-                    Capacity
-                    Commissioning
-                    Category
-                    Image {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData(
-                                    width: 600
-                                    placeholder: BLURRED
-                                    formats: [AUTO, WEBP, AVIF]
-                                    aspectRatio: 1.5
-                                )
-                            }
-                        }
+const dataQuery = graphql`
+query GetProjects {
+    allStrapiProject (
+        sort: {
+        publishedAt: DESC
+        }
+    ) {
+        nodes {
+            id
+            Name
+            Capacity
+            Commissioning
+            Category
+            Image {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            width: 600
+                            placeholder: BLURRED
+                            formats: [AUTO, WEBP, AVIF]
+                            aspectRatio: 1.5
+                        )
                     }
                 }
             }
         }
-    `);
+    }
+}
+`;
 
-    const projects = data.allStrapiProject.nodes;
+const Project = ({ block }) => {
+    const sourceData = useStaticQuery(dataQuery);
+
+    const projects = sourceData.allStrapiProject.nodes;
 
     const projectList = projects
-    .filter((item) => item.Image && item.Image.localFile);
+        .filter((item) => item.Image && item.Image.localFile);
 
     const Image = ({ image, name }) => (
         <GatsbyImage
