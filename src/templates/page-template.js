@@ -1,17 +1,17 @@
 import React from 'react'
 import { graphql } from "gatsby";
 import { pageFragment } from "../queries/pageFragments.js";
-import Layout from "../components/layout.js"
-import Banner from '../components/banner.js'
+import Layout from "../components/layout.js";
+import Banner from '../components/banner.js';
+import BannerHome from '../components/bannerHome.js';
 import DynamicComponent from "../components/dynamicComponent.js";
 
 const PageTemplate = ({ data }) => {
     const page = data.strapiPage;
-    console.log(page);
 
     return (
         <Layout>
-            <Banner />
+            {page.template === 'home' ? <BannerHome /> : <Banner />}
             {page.content.map((block, index) => {
                 return <DynamicComponent key={index} block={block} template={page.template} />
             })}

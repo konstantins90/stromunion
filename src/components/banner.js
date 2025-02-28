@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
 import BannerVideo from "../video/banner.mp4"
-import Logo from "../assets/logo.svg"
 
 const Banner = () => {
     return (
