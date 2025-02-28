@@ -10,7 +10,6 @@ import rehypeRaw from "rehype-raw";
 
 const MetroHome = ({ block }) => {
     const metro = block;
-    console.log(block);
     return (
         <section id="service" className="pt-4">
             <div className="wrap pb-10 md:py-10 grid grid-cols-12 grid-rows-4 md:grid-rows-7 gap-4 h-[150vh] md:h-auto">

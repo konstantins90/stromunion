@@ -11,15 +11,16 @@ const strapiConfig = {
 	accessToken: process.env.STRAPI_TOKEN,
 	collectionTypes: [
 		{
-            singularName: "page",
-        	queryParams: {
-            	populate: {
-                	content: { populate: "*" },
-            	},
+			singularName: "page",
+			queryParams: {
+				populate: {
+					content: { populate: "*" },
+				},
             },
         },
 		'project',
 		'service',
+		'step',
 	],
 	singleTypes: ['config'],
 	maxParallelRequests: 10,

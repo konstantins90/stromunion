@@ -15,6 +15,13 @@ export const pageFragment = graphql`
             ...ContentMapData
             ...ContentTextScrollData
             ...ContentPartnerData
+            ...ContentButtonData
+            ...ContentMetroData
+            ...ContentBoxData
+            ...ContentProjectData
+            ...ContentContactData
+            ...ContentParallaxData
+            ...ContentStepData
         }
     }
     
@@ -119,6 +126,105 @@ export const pageFragment = graphql`
                         formats: [AUTO]
                     )
                 }
+            }
+        }
+    }
+
+    fragment ContentButtonData on STRAPI__COMPONENT_CONTENT_RED_BUTTON_LINK {
+        headline
+        text {
+            data {
+                text
+            }
+        }
+        link {
+            name
+            link
+        }
+    }
+
+    fragment ContentMetroData on STRAPI__COMPONENT_CONTENT_METRO_UEBER_UNS {
+        metroBox_1: box_1 {
+            data {
+                box_1
+            }
+        }
+        metroBox_2: box_2 {
+            strapi_json_value {
+                year
+                kWp
+            }
+        }
+        metroBox_3: box_3 {
+            data {
+                box_3
+            }
+        }
+        metroBox_4: box_4 {
+            data {
+                box_4
+            }
+        }
+    }
+
+    fragment ContentBoxData on STRAPI__COMPONENT_CONTENT_BOXEN {
+        headline
+        text {
+            data {
+                text
+            }
+        }
+        box {
+            headline
+            text {
+                data {
+                    text
+                }
+            }
+        }
+    }
+
+    fragment ContentProjectData on STRAPI__COMPONENT_CONTENT_PROJEKTE {
+        projectHeadline: headline {
+            data {
+                headline
+            }
+        }
+    }
+
+    fragment ContentContactData on STRAPI__COMPONENT_CONTENT_KONTAKT {
+        phone {
+            name
+            link
+        }
+        email {
+            name
+            link
+        }
+        map {
+            name
+            link
+        }
+    }
+
+    fragment ContentParallaxData on STRAPI__COMPONENT_CONTENT_PARALLAX {
+        text {
+            data {
+                text
+            }
+        }
+        background {
+            localFile {
+                publicURL
+            }
+        }
+    }
+
+    fragment ContentStepData on STRAPI__COMPONENT_CONTENT_SCHRITTE {
+        headline
+        text {
+            data {
+                text
             }
         }
     }

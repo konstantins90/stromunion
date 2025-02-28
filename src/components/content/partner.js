@@ -31,7 +31,7 @@ const Partner = ({ block }) => {
                         const image = getImage(item.localFile.childImageSharp);
                         return (
                             <div key={index}>
-                                <GatsbyImage image={image} />
+                                <Image image={image} />
                             </div>
                         );
                     }
