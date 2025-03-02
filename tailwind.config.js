@@ -17,6 +17,7 @@ module.exports = {
     'text-2xl',
     'font-bold',
     'text-[#FEBD2F]',
+    'md:text-xl'
   ],
   theme: {
     container: {
