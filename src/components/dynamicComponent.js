@@ -12,6 +12,7 @@ import Box from './content/box.js';
 import Contact from './content/contact.js';
 import Parallax from './content/parallax.js';
 import Step from './content/step.js';
+import Imprint from './content/imprint.js';
 
 const componentMap = {
     "STRAPI__COMPONENT_CONTENT_TEASER": Teaser,
@@ -27,6 +28,7 @@ const componentMap = {
     "STRAPI__COMPONENT_CONTENT_KONTAKT": Contact,
     "STRAPI__COMPONENT_CONTENT_PARALLAX": Parallax,
     "STRAPI__COMPONENT_CONTENT_SCHRITTE": Step,
+    "STRAPI__COMPONENT_CONTENT_IMPRESSUM": Imprint,
 };
 
 const DynamicComponent = ({ block, template }) => {

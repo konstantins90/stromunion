@@ -24,6 +24,7 @@ export const pageFragment = graphql`
             ...ContentContactData
             ...ContentParallaxData
             ...ContentStepData
+            ...ContentImprintData
         }
     }
     
@@ -229,5 +230,9 @@ export const pageFragment = graphql`
                 text
             }
         }
+    }
+
+    fragment ContentImprintData on STRAPI__COMPONENT_CONTENT_IMPRESSUM {
+        enabled
     }
 `;
