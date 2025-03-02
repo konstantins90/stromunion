@@ -8,6 +8,15 @@ module.exports = {
     'bg-zinc-100',
     'text-red-600',
     'text-[#FF0201]',
+    'text-4xl',
+    'text-7xl',
+    'text-6xl',
+    'lg:text-14xl',
+    'xl:text-14xl',
+    'lg:text-2xl',
+    'text-2xl',
+    'font-bold',
+    'text-[#FEBD2F]',
   ],
   theme: {
     container: {
