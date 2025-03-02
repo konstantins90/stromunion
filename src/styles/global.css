@@ -282,3 +282,7 @@ body.page-home #logo > * {
         width: calc(100% - 70px);
     }
 }
+
+.leaflet-bottom {
+    display: none !important;
+}
