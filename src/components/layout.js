@@ -9,6 +9,7 @@ const Layout = ({ children }) => {
             <main>
                 {children}
             </main>
+            <div className="md:text-xl"></div>
             <Footer/>
         </>
     )
