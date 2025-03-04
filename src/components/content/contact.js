@@ -1,6 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faAt, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
 
 const Contact = ({ block }) => {
     return (
@@ -26,7 +28,7 @@ const Contact = ({ block }) => {
                             <FontAwesomeIcon icon={faLocationDot} size="1x" className="w-4 h-4 md:w-6 md:h-6 pr-4 text-stromRed" />
                         </div>
                         <div>
-                            { block.map.name }
+                            <ReactMarkdown children={block.map.name} rehypePlugins={[rehypeRaw]} />
                         </div>
                     </a>
                 </div>
