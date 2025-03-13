@@ -11,7 +11,7 @@ const dataQuery = graphql`
 query GetServices {
     allStrapiService (
     sort: {
-        strapi_id:ASC
+        order:ASC
     }
     ) {
         nodes {

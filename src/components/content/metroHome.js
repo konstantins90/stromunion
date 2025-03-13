@@ -54,7 +54,7 @@ const MetroHome = ({ block }) => {
                         MW
                     </div>
                     <div className="xl:text-xl">
-                        in Deutschland und Europa seit Jahr 2017
+                        in Deutschland und Europa seit dem Jahr 2009
                     </div>
                 </div>
                 <div data-aos="fade-left" className="hidden md:block md:col-start-12 md:col-span-1 md:row-span-7 rounded-tl-3xl rounded-bl-3xl overflow-hidden bg-black "></div>

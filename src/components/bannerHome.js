@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { useStaticQuery, graphql } from 'gatsby';
 import { configQuery } from "../queries/configFragment.js";
 import BannerVideo from "../video/banner.mp4";
@@ -48,22 +49,6 @@ const BannerHome = () => {
                         )}
                     </div>
                 </hgroup>
-                <div className="absolute bottom-0 xl:left-0 right-0 px-10 xl:px-20 pb-10 hidden md:block" data-aos="fade-up" data-aos-delay="500">
-                    <div className="flex justify-between items-end">
-                        <div className="social flex gap-2">
-                            {data.strapiConfig.phone && (
-                                <div className="bg-[#000000] bg-opacity-65 rounded-full w-auto h-12 p-3 flex gap-x-4 text-white text-nowrap">
-                                    <FontAwesomeIcon icon={faPhone} size="2x" className="w-full h-full" /> <a href={`tel:${data.strapiConfig.phone}`}>{data.strapiConfig.phone_label}</a>
-                                </div>
-                            )}
-                            {data.strapiConfig.phone && (
-                                <div className="bg-[#000000] bg-opacity-65 rounded-full w-auto h-12 p-3 flex gap-x-4 text-white">
-                                    <FontAwesomeIcon icon={faAt} size="2x" className="w-full h-full" /> <a href={`mailto:${data.strapiConfig.email}`}>{data.strapiConfig.email}</a>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     )

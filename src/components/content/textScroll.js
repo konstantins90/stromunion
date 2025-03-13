@@ -36,10 +36,10 @@ const Teaser = ({ block }) => {
     return (
         <section id="team" className="px-4 pt-32 pb-10" data-aos="fade-up">
             <div ref={ref} className="container max-w-[90%] xl:max-w-[60%] relative">
-                <motion.div style={{ y: y }} className="absolute left-0 top-5 md:top-0 -translate-x-11 -translate-y-16">
+                <motion.div style={{ y: y }} className="absolute -left-32 top-5 md:top-0 -translate-x-11 -translate-y-16">
                     <Image image={block.image_1.localFile} />
                 </motion.div>
-                <motion.div style={{ y: y2 }} className="absolute right-0 top-24 md:top-full -translate-x-11 -translate-y-36">
+                <motion.div style={{ y: y2 }} className="absolute -right-32 top-24 md:top-full -translate-x-11 -translate-y-36">
                     <Image image={block.image_2.localFile} />
                 </motion.div>
                 <h3 className="relative z-10 md:text-center text-black text-5xl lg:text-7xl xl:text-9xl">
