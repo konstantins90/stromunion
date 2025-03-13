@@ -22,12 +22,14 @@ const Metro = ({ block }) => {
                         <div className='text-xl md:text-2xl xl:text-6xl text-white md:text-white mb-2'>Leistungsentwicklung</div>
                         <div className='text-xl md:text-2xl xl:text-4xl text-white md:text-white mb-4 font-light'>im Überblick</div>
                     </div>
-                    <div class="hidden md:grid grafik grid-flow-col items-end gap-2 xl:gap-4 absolute bottom-0 left-0 w-full h-3/6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="500">
+                    <div class="hidden md:grid grafik grid-flow-col items-end gap-2 xl:gap-4 absolute bottom-0 left-0 w-full h-3/6 aos-init aos-animate">
                         {performance.map((item, index) => {
                             return (
                                 <div
                                     key={index}
                                     className={`bg-zinc-700 opacity-100 transition-all duration-500 rounded-t-xl flex flex-col justify-between`}
+                                    data-aos="fade-up" data-aos-duration="500"
+                                    data-aos-delay={200 * index}
                                     style={{
                                     height: `${((item.kWp / maxKwp) * 100)+50}%`,
                                     opacity: `${(((item.kWp / maxKwp) * 100) + 60) / 100}`,
