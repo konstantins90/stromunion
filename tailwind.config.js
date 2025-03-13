@@ -18,6 +18,8 @@ module.exports = {
     'font-bold',
     'text-[#FEBD2F]',
     'md:text-xl',
+    'xl:text-[13rem]',
+    'xl:text-[12rem]',
   ],
   theme: {
     container: {
