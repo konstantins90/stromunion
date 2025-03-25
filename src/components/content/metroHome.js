@@ -38,14 +38,14 @@ const MetroHome = ({ block }) => {
                         <div>
                             Leistung über
                         </div>
-                        <span className="text-5xl md:text-7xl xl:text-9xl">
+                        <span className="text-5xl md:text-7xl xl:text-14xl">
                             <VisibilitySensor partialVisibility offset={{ top: 10 }}>
                                 {({ isVisible }) => (
                                 <span>
                                     {isVisible ? (
-                                    <CountUp start={0.0} end={35.76} duration={2} decimals={2} decimal="," />
+                                    <CountUp start={0.0} end={metro.box_2 || "35"} duration={2} decimals={0} decimal="," />
                                     ) : (
-                                    "35.76"
+                                        metro.box_2 || "35"
                                     )}
                                 </span>
                                 )}
