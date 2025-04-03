@@ -10,12 +10,16 @@ const Contact = ({ block }) => {
             <div className="px-5 xl:px-20 py-5 md:py-10">
                 <div className='text-lg md:text-2xl mt-10 font-light flex flex-col md:flex-row wrap gap-4 overflow-x-scroll md:overflow-hidden'>
                     <div className='bg-black text-white p-10 rounded-xl flex flex-col justify-center gap-4'>
-                        <div>
-                            <FontAwesomeIcon icon={faPhone} size="1x" className="w-4 h-4 md:w-6 md:h-6 mr-2 text-stromRed" />
-                            <a href={`tel:${block.phone.link}`}>
-                                { block.phone.name }
-                            </a>
-                        </div>
+                        {
+                            block.phone.link && block.phone.name && (
+                                <div>
+                                    <FontAwesomeIcon icon={faPhone} size="1x" className="w-4 h-4 md:w-6 md:h-6 mr-2 text-stromRed" />
+                                    <a href={`tel:${block.phone.link}`}>
+                                        { block.phone.name }
+                                    </a>
+                                </div>
+                            )
+                        }
                         <div>
                             <FontAwesomeIcon icon={faAt} size="1x" className="w-4 h-4 md:w-6 md:h-6 mr-2 text-stromRed" />
                             <a href={`mailto:${block.email.link}`}>
