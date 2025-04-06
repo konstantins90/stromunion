@@ -17,7 +17,7 @@ const Footer = () => {
         <footer id="footer" className="py-5 px-4 relative flex flex-col justify-end bg-black text-white">
             <div className="flex flex-col">
                 <div className="text-sm text-center mb-2">
-                    {data.strapiConfig.footer_text_1.data.footer_text_1} · <Link to="/impressum">Impressum</Link>
+                    {data.strapiConfig.footer_text_1.data.footer_text_1} · <Link to="/datenschutz">Datenschutz</Link> · <Link to="/impressum">Impressum</Link>
                 </div>
                 { data.strapiConfig.footer_text_2 && (
                     <div className="footer-copyright text-sm text-center">

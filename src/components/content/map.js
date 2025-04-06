@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import L from 'leaflet';
@@ -15,6 +16,46 @@ if (typeof window !== 'undefined') {
         popupAnchor: [0, -55]
     });
 }
+
+const ZoomOnVisible = ({ center = [52.52, 13.405], zoom = 7, duration = 2 }) => {
+    const map = useMap();
+    const [hasZoomed, setHasZoomed] = useState(false);
+    const { ref, inView } = useInView({ triggerOnce: true });
+
+    useEffect(() => {
+        if (inView && map && !hasZoomed) {
+            const timeout = setTimeout(() => {
+                setHasZoomed(true);
+                map.flyTo(center, zoom, {
+                    animate: true,
+                    duration,
+                });
+            }, 800);
+            return () => clearTimeout(timeout);
+        }
+    }, [inView, map, hasZoomed, center, zoom, duration]);
+
+    useEffect(() => {
+        if (map) {
+            // Loggt die Zoom- und Position jedes Mal, wenn sich die Karte bewegt
+            const logMapDetails = () => {
+                const center = map.getCenter(); // Holt die aktuelle Position der Karte
+                const zoomLevel = map.getZoom(); // Holt den aktuellen Zoom-Level
+                console.log(`Map Center: ${center.lat}, ${center.lng}`);
+                console.log(`Zoom Level: ${zoomLevel}`);
+            };
+
+            map.on('moveend', logMapDetails); // Hört auf das 'moveend'-Event, wenn die Bewegung beendet ist
+
+            // Bereinigt den Event-Listener, wenn die Komponente unmontiert wird
+            return () => {
+                map.off('moveend', logMapDetails);
+            };
+        }
+    }, [map]);
+
+    return <div ref={ref} />;
+};
 
 const MapComponent = ({ block }) => {
     const data = useStaticQuery(graphql`
@@ -91,7 +132,8 @@ const MapComponent = ({ block }) => {
                 </div>
             </div>
             <div className="map-wrap -mx-4 mt-20 mb-0">
-                <MapContainer center={[52.52, 13.405]} zoom={7} scrollWheelZoom={false} className="w-full h-[70vh]">
+                <MapContainer center={[48.8038565205725, 19.753417968750004]} zoom={5} scrollWheelZoom={false} className="w-full h-[70vh] bg-black">
+                    <ZoomOnVisible center={[52.52, 13.405]} zoom={7} duration={1.5} />
                     <TileLayer
                         url='https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'
                     />

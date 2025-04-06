@@ -17,7 +17,7 @@ const Imprint = () => {
                 <div class="text-lg font-light md:columns-2">
                     {data.strapiConfig.impressum.map(function(item) {
                         return (
-                            <dl class="contact contact_fields">
+                            <dl class="contact contact_fields break-inside-avoid">
                                 <dt>
                                     <strong>
                                         {item.label}
