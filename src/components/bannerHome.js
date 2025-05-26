@@ -17,7 +17,7 @@ const BannerHome = () => {
     `);
     
     return (
-        <section id="banner" className="p-4 h-[50vh] md:h-[85vh]">
+        <section id="banner" className="p-4 h-[50vh] md:h-[85vh] md:min-h-[555px]">
             <div className="relative h-full rounded-3xl overflow-hidden bg-zinc-900">
                 <video
                     autoplay="autoPlay" 
