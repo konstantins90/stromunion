@@ -28,7 +28,7 @@ const BannerHome = () => {
                 >
                     <source src={ BannerVideo } type="video/mp4" />
                 </video>
-                <hgroup className="absolute bottom-5 md:top-40 px-5 lg:px-10 xl:px-20 drop-shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <hgroup className="absolute bottom-10 px-5 lg:px-10 xl:px-20 drop-shadow-lg" data-aos="fade-up" data-aos-delay="300">
                     <div className="wrap text-white text-opacity-85">
                         <h2 className="text-3xl lg:text-6xl xl:text-8xl font-bold flex gap-4 items-end">
                             <div className="relative">
