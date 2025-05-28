@@ -42,7 +42,7 @@ const Teaser = ({ block }) => {
                 <motion.div style={{ y: y2 }} className="absolute -right-32 top-24 md:top-full -translate-x-11 -translate-y-36">
                     <Image image={block.image_2.localFile} />
                 </motion.div>
-                <h3 className="relative z-10 md:text-center text-black text-5xl lg:text-7xl xl:text-9xl">
+                <h3 className="relative z-10 md:text-center text-black text-5xl lg:text-7xl">
                     <ReactMarkdown children={block.scrollHeadline.data.headline} rehypePlugins={[rehypeRaw]} />
                 </h3>
             </div>
