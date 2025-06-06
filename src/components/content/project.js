@@ -70,12 +70,12 @@ const Project = ({ block }) => {
                 </h3>
             </div>
             <div className="projects pt-10 px-4 md:px-20">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
                     {projectList.map((project, index) => (
                         project.Image?.localFile ? (
                             <div data-aos="fade-up">
                                 <Image image={project.Image.localFile} name={project.Name} />
-                                <div className="mt-4 text-lg font-light text-white md:flex justify-between">
+                                <div className="mt-4 text-lg font-light text-white flex justify-between">
                                     <div className="uppercase">
                                         {project.Name}
                                     </div>
