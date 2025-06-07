@@ -20,6 +20,17 @@ module.exports = {
     'md:text-xl',
     'xl:text-[13rem]',
     'xl:text-[12rem]',
+    'text-7xl',
+    'md:text-9xl',
+    'lg:text-7xl',
+    'xl:text-[11rem]',
+    '2xl:text-[13rem]',
+    'text-xl',
+    'md:text-2xl',
+    'lg:text-xl',
+    'xl:text-3xl',
+    'text-center',
+    'text-nowrap'
   ],
   theme: {
     container: {
