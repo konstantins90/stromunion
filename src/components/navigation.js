@@ -65,7 +65,7 @@ const Navigation = () => {
     return (
         <>
             <div id="burger-menu" className={`${isMenuOpen ? "show" : ""} md:hidden z-40`} onClick={toggleMenu}>
-                <button className="text-white focus:outline-none">
+                <button className="text-white focus:outline-none" label="Menu-Button">
                     {isMenuOpen ? (
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
