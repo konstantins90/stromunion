@@ -24,7 +24,3 @@ const BodyClassWrapper = ({ children, location }) => {
 export const wrapPageElement = ({ element, props }) => {
     return <BodyClassWrapper location={props.location}>{element}</BodyClassWrapper>;
 };
-
-export const onRenderBody = ({ setHtmlAttributes }, pluginOptions) => {
-    setHtmlAttributes({ lang: "de" });
-};

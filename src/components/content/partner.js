@@ -31,7 +31,7 @@ const Partner = ({ block }) => {
                         const image = getImage(item.localFile.childImageSharp);
                         return (
                             <div key={index}>
-                                <Image image={image} />
+                                <Image image={image} name={item.alternativeText} />
                             </div>
                         );
                     }

@@ -119,6 +119,8 @@ export const pageFragment = graphql`
     fragment ContentPartnerData on STRAPI__COMPONENT_CONTENT_PARTNERS {
         class
         logos {
+            alternativeText
+            name
             localFile {
                 extension
                 publicURL
