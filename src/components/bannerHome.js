@@ -3,6 +3,9 @@ import { Link } from "gatsby";
 import { useStaticQuery, graphql } from 'gatsby';
 import { configQuery } from "../queries/configFragment.js";
 import BannerVideo from "../video/banner.mp4";
+import BannerVideoWebm from "../video/banner.webm";
+import BannerVideoSmall from "../video/banner-small.mp4";
+import BannerVideoSmallWebm from "../video/banner-small.webm";
 import Logo from "../assets/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faAt } from "@fortawesome/free-solid-svg-icons";
@@ -26,7 +29,10 @@ const BannerHome = () => {
                     playsinline="playsinline"
                     className="video w-full h-full object-cover"
                 >
-                    <source src={ BannerVideo } type="video/mp4" />
+                    <source src={ BannerVideoSmallWebm } type="video/webm" media="(max-width: 768px)" />
+                    <source src={ BannerVideoSmall } type="video/mp4" media="(max-width: 768px)" />
+                    <source src={ BannerVideoWebm } type="video/webm" media="(min-width: 769px)" />
+                    <source src={ BannerVideo } type="video/mp4" media="(min-width: 769px)" />
                 </video>
                 <hgroup className="absolute bottom-10 px-5 lg:px-10 xl:px-20 drop-shadow-lg" data-aos="fade-up" data-aos-delay="300">
                     <div className="wrap text-white text-opacity-85">
