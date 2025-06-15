@@ -22,7 +22,7 @@ const Partner = ({ block }) => {
                     if (item.localFile.extension == 'svg') {
                         return (
                             <div key={index}>
-                                <img src={item.localFile.publicURL} className="h-[60px]" />
+                                <img src={item.localFile.publicURL} className="h-[60px]" alt={item.alternativeText} />
                             </div>
                         );
                     }
